@@ -2416,11 +2416,11 @@ const QuizApp = () => {
               return selectedOptionText === currentQuestion.answer_letter;
             })() ? (
               <div className="text-green-600 font-medium">
-                ✓ Correct! {currentQuestion.answer_explanation}
+                ✓ Correct!
               </div>
             ) : (
               <div className="text-red-600 font-medium">
-                ✗ Incorrect. {currentQuestion.answer_explanation}
+                ✗ Incorrect
               </div>
             )
           ) : (
