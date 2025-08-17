@@ -2355,7 +2355,7 @@ const QuizApp = () => {
         {currentQuestion.options.map((option: string, index: number) => {
           const optionLetter = String.fromCharCode(65 + index);
           const isSelected = selectedAnswer === optionLetter;
-          const isCorrect = option === currentQuestion.answer_letter; // Compare option text with answer text
+          const isCorrect = optionLetter === currentQuestion.answer_letter; // Compare option letter with answer letter
           const questionAlreadyAnswered = questionStatus[currentQuestionIndex]?.answered;
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
