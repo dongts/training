@@ -2407,37 +2407,34 @@ const QuizApp = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex justify-between">
-        {/* Action Buttons */}
-        <div className="flex justify-between items-center">
-          {/* Previous Button */}
+      <div className="flex justify-center items-center gap-4 mt-6">
+        {/* Previous Button */}
+        <button
+          onClick={goToPrevious}
+          disabled={currentQuestionIndex === 0}
+          className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+        >
+          ← Previous
+        </button>
+
+        {/* Submit Answer Button (only show if not submitted yet) */}
+        {!showResult && !questionStatus[currentQuestionIndex]?.answered && (
           <button
-            onClick={goToPrevious}
-            disabled={currentQuestionIndex === 0}
-            className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+            onClick={handleSubmitAnswer}
+            disabled={!selectedAnswer}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
           >
-            ← Previous
+            Submit Answer
           </button>
+        )}
 
-          {/* Submit Answer Button (only show if not submitted yet) */}
-          {!showResult && !questionStatus[currentQuestionIndex]?.answered && (
-            <button
-              onClick={handleSubmitAnswer}
-              disabled={!selectedAnswer}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-            >
-              Submit Answer
-            </button>
-          )}
-
-          {/* Next Button */}
-            <button
-            onClick={goToNext}
-            className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
-            >
-            {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next →'}
-            </button>
-        </div>
+        {/* Next Button */}
+        <button
+          onClick={goToNext}
+          className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+        >
+          {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next →'}
+        </button>
       </div>
     </div>
   );
