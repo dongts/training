@@ -2360,13 +2360,13 @@ const QuizApp = () => {
           if (showResult || questionAlreadyAnswered) {
             // Show result state - readonly with color coding
             if (isCorrect) {
-              // Always highlight the correct answer in green (regardless of what user selected)
+              // ALWAYS highlight the correct answer in green
               buttonClass += "border-green-500 bg-green-50 text-green-800";
-            } else if (isSelected && !isCorrect) {
-              // Show user's incorrect selection in red
+            } else if (isSelected) {
+              // Show user's selected answer (if wrong, will be red)
               buttonClass += "border-red-500 bg-red-50 text-red-800";
             } else {
-              // Other options remain neutral
+              // Other unselected options remain neutral
               buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
             }
             buttonClass += " cursor-default"; // Make it clear it's not clickable
@@ -2413,7 +2413,7 @@ const QuizApp = () => {
               </div>
             ) : (
               <div className="text-red-600 font-medium">
-                ✗ Incorrect
+                ✗ Incorrect. {currentQuestion.answer_explanation}
               </div>
             )
           ) : (
