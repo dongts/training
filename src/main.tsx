@@ -2073,10 +2073,8 @@ const QuizApp = () => {
     if (!selectedAnswer) return;
 
     const currentQuestion = questions[currentQuestionIndex];
-    // Convert selectedAnswer letter to option text for comparison
-    const selectedOptionIndex = selectedAnswer.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
-    const selectedOptionText = currentQuestion.options[selectedOptionIndex];
-    const isCorrect = selectedOptionText === currentQuestion.answer_letter;
+    // Compare selected answer letter with correct answer letter
+    const isCorrect = selectedAnswer === currentQuestion.answer_letter;
     
     if (isCorrect) {
       setScore(score + 1);
