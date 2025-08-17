@@ -2073,7 +2073,10 @@ const QuizApp = () => {
     if (!selectedAnswer) return;
 
     const currentQuestion = questions[currentQuestionIndex];
-    const isCorrect = selectedAnswer === currentQuestion.answer_letter;
+    // Convert selectedAnswer letter to option text for comparison
+    const selectedOptionIndex = selectedAnswer.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
+    const selectedOptionText = currentQuestion.options[selectedOptionIndex];
+    const isCorrect = selectedOptionText === currentQuestion.answer_letter;
     
     if (isCorrect) {
       setScore(score + 1);
@@ -2352,7 +2355,7 @@ const QuizApp = () => {
         {currentQuestion.options.map((option: string, index: number) => {
           const optionLetter = String.fromCharCode(65 + index);
           const isSelected = selectedAnswer === optionLetter;
-          const isCorrect = optionLetter === currentQuestion.answer_letter;
+          const isCorrect = option === currentQuestion.answer_letter; // Compare option text with answer text
           const questionAlreadyAnswered = questionStatus[currentQuestionIndex]?.answered;
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
@@ -2407,7 +2410,11 @@ const QuizApp = () => {
       <div className="flex justify-between">
         <div className="text-sm text-gray-500">
           {(showResult || questionStatus[currentQuestionIndex]?.answered) ? (
-            selectedAnswer === currentQuestion.answer_letter ? (
+            (() => {
+              const selectedOptionIndex = selectedAnswer.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
+              const selectedOptionText = currentQuestion.options[selectedOptionIndex];
+              return selectedOptionText === currentQuestion.answer_letter;
+            })() ? (
               <div className="text-green-600 font-medium">
                 ✓ Correct! {currentQuestion.answer_explanation}
               </div>
