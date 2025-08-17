@@ -45,44 +45,39 @@ class QuestionExtractor:
                     xl_file = pd.ExcelFile(self.excel_file)
                     self.source_name = xl_file.sheet_names[0]
             
-            # Expected columns: index, question, A, B, C, D, correct, explain
-            expected_columns = ['index', 'question', 'A', 'B', 'C', 'D', 'correct', 'explain']
+            # Print available columns for debugging
+            print(f"Available columns in Excel: {list(df.columns)}")
             
-            # Check if columns exist (case-insensitive)
-            df_columns_lower = [col.lower() for col in df.columns]
-            column_mapping = {}
-            
-            for expected_col in expected_columns:
-                found = False
-                for i, col in enumerate(df_columns_lower):
-                    if expected_col.lower() in col or col in expected_col.lower():
-                        column_mapping[expected_col] = df.columns[i]
-                        found = True
-                        break
-                if not found:
-                    print(f"Warning: Column '{expected_col}' not found. Available columns: {list(df.columns)}")
+            # Create more precise column mapping
+            column_mapping = self._create_column_mapping(df.columns)
+            print(f"Column mapping: {column_mapping}")
             
             # Extract questions
             questions = []
             
             for idx, row in df.iterrows():
                 # Skip empty rows
-                if pd.isna(row.get(column_mapping.get('question', 'question'), '')):
+                if pd.isna(row.get(column_mapping.get('question'), '')):
                     continue
                     
                 try:
+                    # Get the 4 options in order A, B, C, D
+                    options = []
+                    for option_key in ['A', 'B', 'C', 'D']:
+                        option_text = self._safe_get_text(row, column_mapping.get(option_key))
+                        options.append(option_text)
+                    
+                    # Get the correct answer and normalize to letter
+                    raw_answer = self._safe_get_text(row, column_mapping.get('correct'))
+                    answer_letter = self._normalize_answer_letter(raw_answer, options)
+                    
                     question_obj = {
                         "source": self.source_name,
-                        "number": self._safe_get_number(row, column_mapping.get('index', 'index')),
-                        "question": self._safe_get_text(row, column_mapping.get('question', 'question')),
-                        "options": [
-                            self._safe_get_text(row, column_mapping.get('A', 'A')),
-                            self._safe_get_text(row, column_mapping.get('B', 'B')),
-                            self._safe_get_text(row, column_mapping.get('C', 'C')),
-                            self._safe_get_text(row, column_mapping.get('D', 'D'))
-                        ],
-                        "answer_letter": self._safe_get_text(row, column_mapping.get('correct', 'correct')),
-                        "answer_explanation": self._safe_get_text(row, column_mapping.get('explain', 'explain'))
+                        "number": self._safe_get_number(row, column_mapping.get('index')),
+                        "question": self._safe_get_text(row, column_mapping.get('question')),
+                        "options": options,
+                        "answer_letter": answer_letter,
+                        "answer_explanation": self._safe_get_text(row, column_mapping.get('explain'))
                     }
                     
                     # Only add if question is not empty
@@ -99,9 +94,80 @@ class QuestionExtractor:
             print(f"Error reading Excel file: {e}")
             return []
     
+    def _create_column_mapping(self, columns):
+        """Create precise column mapping for Excel columns."""
+        mapping = {}
+        
+        # Convert columns to list for easier handling
+        col_list = list(columns)
+        
+        # Try to find exact matches first, then fuzzy matches
+        expected_patterns = {
+            'index': ['index', 'idx', 'number', 'num', 'stt'],
+            'question': ['question', 'câu hỏi', 'cauhoi'],
+            'A': ['A'],
+            'B': ['B'], 
+            'C': ['C'],
+            'D': ['D'],
+            'correct': ['correct', 'answer', 'đáp án', 'dapan', 'đúng'],
+            'explain': ['explain', 'explanation', 'giải thích', 'giaithich']
+        }
+        
+        for expected_key, patterns in expected_patterns.items():
+            found = False
+            # First try exact match (case insensitive)
+            for col in col_list:
+                if str(col).lower().strip() in [p.lower() for p in patterns]:
+                    mapping[expected_key] = col
+                    found = True
+                    break
+            
+            # If not found, try partial match
+            if not found:
+                for col in col_list:
+                    col_lower = str(col).lower().strip()
+                    for pattern in patterns:
+                        if pattern.lower() in col_lower or col_lower in pattern.lower():
+                            mapping[expected_key] = col
+                            found = True
+                            break
+                    if found:
+                        break
+            
+            if not found:
+                print(f"Warning: Could not find column for '{expected_key}'. Available: {col_list}")
+        
+        return mapping
+    
+    def _normalize_answer_letter(self, raw_answer: str, options: list) -> str:
+        """Normalize answer to letter A/B/C/D."""
+        if not raw_answer:
+            return ''
+        
+        raw_answer = raw_answer.strip()
+        
+        # If it's already a single letter A, B, C, or D
+        if raw_answer.upper() in ['A', 'B', 'C', 'D']:
+            return raw_answer.upper()
+        
+        # If it's the full text of one of the options, find which letter it corresponds to
+        for i, option in enumerate(options):
+            if option and raw_answer.strip() == option.strip():
+                return ['A', 'B', 'C', 'D'][i]
+        
+        # If it contains a letter at the beginning
+        if raw_answer and raw_answer[0].upper() in ['A', 'B', 'C', 'D']:
+            return raw_answer[0].upper()
+        
+        # Default fallback
+        print(f"Warning: Could not normalize answer '{raw_answer}' to letter. Using as-is.")
+        return raw_answer
+
     def _safe_get_text(self, row: pd.Series, column: str) -> str:
         """Safely get text value from row, handling NaN values."""
         try:
+            if column is None:
+                return ''
             value = row.get(column, '')
             if pd.isna(value):
                 return ''
@@ -112,6 +178,8 @@ class QuestionExtractor:
     def _safe_get_number(self, row: pd.Series, column: str) -> int:
         """Safely get number value from row, handling NaN values."""
         try:
+            if column is None:
+                return 0
             value = row.get(column, 0)
             if pd.isna(value):
                 return 0
