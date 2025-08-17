@@ -2408,26 +2408,6 @@ const QuizApp = () => {
 
       {/* Action Buttons */}
       <div className="flex justify-between">
-        <div className="text-sm text-gray-500">
-          {(showResult || questionStatus[currentQuestionIndex]?.answered) ? (
-            (() => {
-              const selectedOptionIndex = selectedAnswer.charCodeAt(0) - 65; // A=0, B=1, C=2, D=3
-              const selectedOptionText = currentQuestion.options[selectedOptionIndex];
-              return selectedOptionText === currentQuestion.answer_letter;
-            })() ? (
-              <div className="text-green-600 font-medium">
-                ✓ Correct!
-              </div>
-            ) : (
-              <div className="text-red-600 font-medium">
-                ✗ Incorrect
-              </div>
-            )
-          ) : (
-            "Select an answer above"
-          )}
-        </div>
-        
         {/* Action Buttons */}
         <div className="flex justify-between items-center">
           {/* Previous Button */}
