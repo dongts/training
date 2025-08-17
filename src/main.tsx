@@ -2063,7 +2063,8 @@ const QuizApp = () => {
   };
 
   const handleAnswerSelect = (_option: string, index: number) => {
-    if (!showResult) {
+    const questionAlreadyAnswered = questionStatus[currentQuestionIndex]?.answered;
+    if (!showResult && !questionAlreadyAnswered) {
       setSelectedAnswer(String.fromCharCode(65 + index)); // Convert to A, B, C, D
     }
   };
@@ -2110,8 +2111,17 @@ const QuizApp = () => {
   // Navigate to specific question
   const goToQuestion = (index: number) => {
     setCurrentQuestionIndex(index);
-    setSelectedAnswer('');
-    setShowResult(false);
+    
+    // If this question was already answered, show the previous answer and result
+    const questionAlreadyAnswered = questionStatus[index]?.answered;
+    if (questionAlreadyAnswered) {
+      setSelectedAnswer(questionStatus[index]?.selectedAnswer || '');
+      setShowResult(true);
+    } else {
+      setSelectedAnswer('');
+      setShowResult(false);
+    }
+    
     setShowQuestionList(false);
   };
 
@@ -2123,17 +2133,35 @@ const QuizApp = () => {
   // Navigation functions
   const goToPrevious = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-      setSelectedAnswer('');
-      setShowResult(false);
+      const newIndex = currentQuestionIndex - 1;
+      setCurrentQuestionIndex(newIndex);
+      
+      // Check if the destination question was already answered
+      const questionAlreadyAnswered = questionStatus[newIndex]?.answered;
+      if (questionAlreadyAnswered) {
+        setSelectedAnswer(questionStatus[newIndex]?.selectedAnswer || '');
+        setShowResult(true);
+      } else {
+        setSelectedAnswer('');
+        setShowResult(false);
+      }
     }
   };
 
   const goToNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer('');
-      setShowResult(false);
+      const newIndex = currentQuestionIndex + 1;
+      setCurrentQuestionIndex(newIndex);
+      
+      // Check if the destination question was already answered
+      const questionAlreadyAnswered = questionStatus[newIndex]?.answered;
+      if (questionAlreadyAnswered) {
+        setSelectedAnswer(questionStatus[newIndex]?.selectedAnswer || '');
+        setShowResult(true);
+      } else {
+        setSelectedAnswer('');
+        setShowResult(false);
+      }
     } else {
       setQuizCompleted(true);
     }
@@ -2325,10 +2353,12 @@ const QuizApp = () => {
           const optionLetter = String.fromCharCode(65 + index);
           const isSelected = selectedAnswer === optionLetter;
           const isCorrect = optionLetter === currentQuestion.answer_letter;
+          const questionAlreadyAnswered = questionStatus[currentQuestionIndex]?.answered;
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
           
-          if (showResult) {
+          if (showResult || questionAlreadyAnswered) {
+            // Show result state - readonly with color coding
             if (isCorrect) {
               buttonClass += "border-green-500 bg-green-50 text-green-800";
             } else if (isSelected && !isCorrect) {
@@ -2336,11 +2366,13 @@ const QuizApp = () => {
             } else {
               buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
             }
+            buttonClass += " cursor-default"; // Make it clear it's not clickable
           } else {
+            // Interactive state - can be clicked
             if (isSelected) {
               buttonClass += "border-blue-500 bg-blue-50 text-blue-800";
             } else {
-              buttonClass += "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50";
+              buttonClass += "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
             }
           }
 
@@ -2348,7 +2380,7 @@ const QuizApp = () => {
             <button
               key={index}
               onClick={() => handleAnswerSelect(option, index)}
-              disabled={showResult}
+              disabled={showResult || questionAlreadyAnswered}
               className={buttonClass}
             >
               <div className="flex items-start gap-3">
@@ -2356,10 +2388,10 @@ const QuizApp = () => {
                   {optionLetter}.
                 </span>
                 <span className="flex-1">{option}</span>
-                {showResult && isCorrect && (
+                {(showResult || questionAlreadyAnswered) && isCorrect && (
                   <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 )}
-                {showResult && isSelected && !isCorrect && (
+                {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && (
                   <XCircle className="w-5 h-5 text-red-600 mt-1" />
                 )}
               </div>
@@ -2371,11 +2403,15 @@ const QuizApp = () => {
       {/* Action Buttons */}
       <div className="flex justify-between">
         <div className="text-sm text-gray-500">
-          {showResult ? (
+          {(showResult || questionStatus[currentQuestionIndex]?.answered) ? (
             selectedAnswer === currentQuestion.answer_letter ? (
-              <span className="text-green-600 font-medium">✓ Correct!</span>
+              <div className="text-green-600 font-medium">
+                ✓ Correct! {currentQuestion.answer_explanation}
+              </div>
             ) : (
-              <span className="text-red-600 font-medium">✗ Incorrect</span>
+              <div className="text-red-600 font-medium">
+                ✗ Incorrect. The correct answer is {currentQuestion.answer_letter}. {currentQuestion.answer_explanation}
+              </div>
             )
           ) : (
             "Select an answer above"
@@ -2394,7 +2430,7 @@ const QuizApp = () => {
           </button>
 
           {/* Submit Answer Button (only show if not submitted yet) */}
-          {!showResult && (
+          {!showResult && !questionStatus[currentQuestionIndex]?.answered && (
             <button
               onClick={handleSubmitAnswer}
               disabled={!selectedAnswer}
