@@ -19,6 +19,12 @@ interface AnsweredQuestion {
   options: string[];
 }
 
+interface QuestionStatus {
+  answered: boolean;
+  isCorrect?: boolean;
+  selectedAnswer?: string;
+}
+
 const QuizApp = () => {
   // Quiz data from the JSON
   const quizData = [
@@ -1982,7 +1988,7 @@ const QuizApp = () => {
   const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [showQuestionList, setShowQuestionList] = useState(false);
-  const [answeredStatus, setAnsweredStatus] = useState<boolean[]>([]);
+  const [questionStatus, setQuestionStatus] = useState<QuestionStatus[]>([]);
 
   // Local storage functions
   const saveToLocalStorage = () => {
@@ -1994,7 +2000,7 @@ const QuizApp = () => {
       score,
       answeredQuestions,
       quizCompleted,
-      answeredStatus,
+      questionStatus,
       timestamp: Date.now()
     };
     localStorage.setItem('quizProgress', JSON.stringify(quizState));
@@ -2014,7 +2020,7 @@ const QuizApp = () => {
           setScore(state.score || 0);
           setAnsweredQuestions(state.answeredQuestions || []);
           setQuizCompleted(state.quizCompleted || false);
-          setAnsweredStatus(state.answeredStatus || []);
+          setQuestionStatus(state.questionStatus || []);
           return true;
         }
       }
@@ -2041,7 +2047,7 @@ const QuizApp = () => {
     if (questions.length > 0) {
       saveToLocalStorage();
     }
-  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, answeredStatus]);
+  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus]);
 
   const shuffleQuestions = () => {
     const shuffled = [...quizData].sort(() => Math.random() - 0.5);
@@ -2052,7 +2058,7 @@ const QuizApp = () => {
     setScore(0);
     setAnsweredQuestions([]);
     setQuizCompleted(false);
-    setAnsweredStatus(new Array(shuffled.length).fill(false));
+    setQuestionStatus(new Array(shuffled.length).fill(null).map(() => ({ answered: false })));
     clearLocalStorage();
   };
 
@@ -2072,10 +2078,14 @@ const QuizApp = () => {
       setScore(score + 1);
     }
 
-    // Mark this question as answered
-    const newAnsweredStatus = [...answeredStatus];
-    newAnsweredStatus[currentQuestionIndex] = true;
-    setAnsweredStatus(newAnsweredStatus);
+    // Mark this question as answered with correct/incorrect status
+    const newQuestionStatus = [...questionStatus];
+    newQuestionStatus[currentQuestionIndex] = {
+      answered: true,
+      isCorrect,
+      selectedAnswer
+    };
+    setQuestionStatus(newQuestionStatus);
 
     setAnsweredQuestions([
       ...answeredQuestions,
@@ -2091,15 +2101,7 @@ const QuizApp = () => {
     setShowResult(true);
   };
 
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer('');
-      setShowResult(false);
-    } else {
-      setQuizCompleted(true);
-    }
-  };
+
 
   const resetQuiz = () => {
     shuffleQuestions();
@@ -2116,6 +2118,25 @@ const QuizApp = () => {
   // Toggle question list visibility
   const toggleQuestionList = () => {
     setShowQuestionList(!showQuestionList);
+  };
+
+  // Navigation functions
+  const goToPrevious = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setSelectedAnswer('');
+      setShowResult(false);
+    }
+  };
+
+  const goToNext = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedAnswer('');
+      setShowResult(false);
+    } else {
+      setQuizCompleted(true);
+    }
   };
 
   const getScoreColor = () => {
@@ -2245,7 +2266,7 @@ const QuizApp = () => {
             <div className="p-4 overflow-y-auto max-h-80">
               <div className="grid grid-cols-1 gap-2">
                 {questions.map((question, index) => {
-                  const isAnswered = answeredStatus[index];
+                  const status = questionStatus[index] || { answered: false };
                   const isCurrent = currentQuestionIndex === index;
                   return (
                     <button
@@ -2254,14 +2275,18 @@ const QuizApp = () => {
                       className={`p-3 rounded-lg border-2 transition-all text-left flex items-center gap-3 ${
                         isCurrent
                           ? 'border-blue-500 bg-blue-50'
-                          : isAnswered
+                          : status.answered && status.isCorrect
                           ? 'border-green-200 bg-green-50 hover:bg-green-100'
+                          : status.answered && !status.isCorrect
+                          ? 'border-red-200 bg-red-50 hover:bg-red-100'
                           : 'border-gray-200 hover:bg-gray-50'
                       }`}
                     >
                       <div className="flex-shrink-0">
-                        {isAnswered ? (
+                        {status.answered && status.isCorrect ? (
                           <CheckCircle className="w-5 h-5 text-green-600" />
+                        ) : status.answered && !status.isCorrect ? (
+                          <XCircle className="w-5 h-5 text-red-600" />
                         ) : (
                           <div className="w-5 h-5 rounded-full border-2 border-gray-300"></div>
                         )}
@@ -2357,8 +2382,19 @@ const QuizApp = () => {
           )}
         </div>
         
-        <div className="flex gap-3">
-          {!showResult ? (
+        {/* Action Buttons */}
+        <div className="flex justify-between items-center">
+          {/* Previous Button */}
+          <button
+            onClick={goToPrevious}
+            disabled={currentQuestionIndex === 0}
+            className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+          >
+            ← Previous
+          </button>
+
+          {/* Submit Answer Button (only show if not submitted yet) */}
+          {!showResult && (
             <button
               onClick={handleSubmitAnswer}
               disabled={!selectedAnswer}
@@ -2366,14 +2402,15 @@ const QuizApp = () => {
             >
               Submit Answer
             </button>
-          ) : (
-            <button
-              onClick={handleNextQuestion}
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'View Results'}
-            </button>
           )}
+
+          {/* Next Button */}
+          <button
+            onClick={goToNext}
+            className="flex items-center gap-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next →'}
+          </button>
         </div>
       </div>
     </div>
