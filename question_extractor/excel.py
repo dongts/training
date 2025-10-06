@@ -68,16 +68,20 @@ class QuestionExtractor:
                         options.append(option_text)
                     
                     # Get the correct answer and normalize to letter
-                    raw_answer = self._safe_get_text(row, column_mapping.get('correct'))
+                    raw_answer = self._safe_get_text(row, column_mapping.get('answer'))
                     answer_letter = self._normalize_answer_letter(raw_answer, options)
                     
+                    # Get question number (use index if available, otherwise use row number)
+                    question_number = self._safe_get_number(row, column_mapping.get('index'))
+                    if question_number == 0:
+                        question_number = idx + 1
+                    
                     question_obj = {
-                        "source": self.source_name,
-                        "number": self._safe_get_number(row, column_mapping.get('index')),
+                        "original_question_number": question_number,
                         "question": self._safe_get_text(row, column_mapping.get('question')),
                         "options": options,
                         "answer_letter": answer_letter,
-                        "answer_explanation": self._safe_get_text(row, column_mapping.get('explain'))
+                        "question_number": question_number
                     }
                     
                     # Only add if question is not empty
@@ -104,13 +108,15 @@ class QuestionExtractor:
         # Try to find exact matches first, then fuzzy matches
         expected_patterns = {
             'index': ['index', 'idx', 'number', 'num', 'stt'],
+            'question_code': ['question_code', 'questioncode', 'mã câu hỏi', 'macauhoi'],
             'question': ['question', 'câu hỏi', 'cauhoi'],
-            'A': ['A'],
-            'B': ['B'], 
-            'C': ['C'],
-            'D': ['D'],
-            'correct': ['correct', 'answer', 'đáp án', 'dapan', 'đúng'],
-            'explain': ['explain', 'explanation', 'giải thích', 'giaithich']
+            'A': ['A', 'option a', 'option_a', 'lựa chọn a'],
+            'B': ['B', 'option b', 'option_b', 'lựa chọn b'], 
+            'C': ['C', 'option c', 'option_c', 'lựa chọn c'],
+            'D': ['D', 'option d', 'option_d', 'lựa chọn d'],
+            'answer': ['answer', 'đáp án', 'dapan', 'đúng', 'correct'],
+            'note': ['note', 'ghi chú', 'ghichu', 'explanation', 'giải thích', 'giaithich'],
+            'status': ['status', 'trạng thái', 'trangthai']
         }
         
         for expected_key, patterns in expected_patterns.items():
@@ -201,11 +207,17 @@ def main():
     """Main function to run the question extractor from command line."""
     parser = argparse.ArgumentParser(description='Extract questions from Excel file to JSON format')
     parser.add_argument('excel_file', help='Path to the Excel file')
-    parser.add_argument('-o', '--output', help='Output JSON file path', default='questions.json')
+    parser.add_argument('-o', '--output', help='Output JSON file path', default=None)
     parser.add_argument('-s', '--source', help='Source/subject name', default=None)
     parser.add_argument('--sheet', help='Sheet name to read', default=None)
     
     args = parser.parse_args()
+    
+    # Generate output filename if not provided
+    if args.output is None:
+        import os
+        base_name = os.path.splitext(os.path.basename(args.excel_file))[0]
+        args.output = f"{base_name}.json"
     
     # Create extractor and process file
     extractor = QuestionExtractor(args.excel_file, args.source)
@@ -214,6 +226,7 @@ def main():
     if questions:
         extractor.save_to_json(questions, args.output)
         print(f"\nExtracted {len(questions)} questions from {args.excel_file}")
+        print(f"Saved to: {args.output}")
         print(f"Sample question:")
         print(json.dumps(questions[0], ensure_ascii=False, indent=2))
     else:

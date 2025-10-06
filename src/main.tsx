@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import QuizApp from './components/QuizApp';
 import testDauThauData from './test_dau_thau.json';
+import deThiNghiepVuKeToanData from './de_thi_nghiep_vu_ke_toan_2025.json';
 
 interface QuizQuestion {
   source: string;
@@ -24,6 +25,16 @@ const luatDauThauQuizData: QuizQuestion[] = testDauThauData.map((item: any) => (
   answer_explanation: ""
 }));
 
+// Prepare quiz data for Nghiệp vụ kế toán
+const nghiepVuKeToanQuizData: QuizQuestion[] = deThiNghiepVuKeToanData.map((item: any) => ({
+  source: "Nghiệp vụ kế toán",
+  number: item.question_number || item.original_question_number,
+  question: item.question,
+  options: item.options,
+  answer_letter: item.answer_letter,
+  answer_explanation: ""
+}));
+
 const App = () => {
   return (
     <HashRouter>
@@ -36,6 +47,16 @@ const App = () => {
               quizData={luatDauThauQuizData}
               title="Quiz Luật Đấu thầu"
               storageKey="luatDauThauQuizProgress"
+            />
+          } 
+        />
+        <Route 
+          path="/nghiep-vu-ke-toan" 
+          element={
+            <QuizApp 
+              quizData={nghiepVuKeToanQuizData}
+              title="Quiz Nghiệp vụ kế toán"
+              storageKey="nghiepVuKeToanQuizProgress"
             />
           } 
         />

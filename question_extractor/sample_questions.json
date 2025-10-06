@@ -1,0 +1,38 @@
+[
+  {
+    "original_question_number": 1,
+    "question": "Đối tượng nào sau đây không thuộc phạm vi áp dụng của Luật Đấu thầu?*",
+    "options": [
+      "Cơ quan nhà nước sử dụng vốn ngân sách nhà nước",
+      "Doanh nghiệp nhà nước thực hiện dự án đầu tư sử dụng vốn ngân sách nhà nước",
+      "Doanh nghiệp do doanh nghiệp nhà nước nắm 100% vốn điều lệ thực hiện dự án đầu tư không sử dụng vốn ngân sách nhà nước",
+      "Tổ chức chính trị - xã hội sử dụng NSNN, nguồn thu hợp pháp của tổ chức để thực hiện dự án đầu tư"
+    ],
+    "answer_letter": "C",
+    "question_number": 1
+  },
+  {
+    "original_question_number": 2,
+    "question": "Thời gian đấu thầu tối thiểu là bao nhiêu ngày?",
+    "options": [
+      "15 ngày",
+      "20 ngày",
+      "30 ngày",
+      "45 ngày"
+    ],
+    "answer_letter": "B",
+    "question_number": 2
+  },
+  {
+    "original_question_number": 3,
+    "question": "Ai là người có thẩm quyền phê duyệt kế hoạch đấu thầu?",
+    "options": [
+      "Thủ trưởng cơ quan",
+      "Giám đốc sở",
+      "Chủ tịch UBND",
+      "Bộ trưởng"
+    ],
+    "answer_letter": "A",
+    "question_number": 3
+  }
+]
