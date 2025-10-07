@@ -47,10 +47,10 @@ class QuestionExtractor:
             
             # Print available columns for debugging
             print(f"Available columns in Excel: {list(df.columns)}")
+            print(f"Total columns found: {len(df.columns)}")
             
-            # Create more precise column mapping
+            # Create column mapping based on positions
             column_mapping = self._create_column_mapping(df.columns)
-            print(f"Column mapping: {column_mapping}")
             
             # Extract questions
             questions = []
@@ -99,49 +99,32 @@ class QuestionExtractor:
             return []
     
     def _create_column_mapping(self, columns):
-        """Create precise column mapping for Excel columns."""
-        mapping = {}
-        
+        """Create column mapping based on fixed column positions."""
         # Convert columns to list for easier handling
         col_list = list(columns)
         
-        # Try to find exact matches first, then fuzzy matches
-        expected_patterns = {
-            'index': ['index', 'idx', 'number', 'num', 'stt'],
-            'question_code': ['question_code', 'questioncode', 'mã câu hỏi', 'macauhoi'],
-            'question': ['question', 'câu hỏi', 'cauhoi'],
-            'A': ['A', 'option a', 'option_a', 'lựa chọn a'],
-            'B': ['B', 'option b', 'option_b', 'lựa chọn b'], 
-            'C': ['C', 'option c', 'option_c', 'lựa chọn c'],
-            'D': ['D', 'option d', 'option_d', 'lựa chọn d'],
-            'answer': ['answer', 'đáp án', 'dapan', 'đúng', 'correct'],
-            'note': ['note', 'ghi chú', 'ghichu', 'explanation', 'giải thích', 'giaithich'],
-            'status': ['status', 'trạng thái', 'trangthai']
+        # Expected column order: index, question_code, question, A, B, C, D, blank, answer, note, status
+        # Use column positions instead of names
+        mapping = {
+            'index': col_list[0] if len(col_list) > 0 else None,           # Column 1: index
+            'question_code': col_list[1] if len(col_list) > 1 else None,   # Column 2: question_code
+            'question': col_list[2] if len(col_list) > 2 else None,       # Column 3: question
+            'A': col_list[3] if len(col_list) > 3 else None,              # Column 4: option A
+            'B': col_list[4] if len(col_list) > 4 else None,              # Column 5: option B
+            'C': col_list[5] if len(col_list) > 5 else None,              # Column 6: option C
+            'D': col_list[6] if len(col_list) > 6 else None,              # Column 7: option D
+            'blank': col_list[7] if len(col_list) > 7 else None,          # Column 8: blank (ignored)
+            'answer': col_list[8] if len(col_list) > 8 else None,         # Column 9: answer
+            'note': col_list[9] if len(col_list) > 9 else None,            # Column 10: note
+            'status': col_list[10] if len(col_list) > 10 else None        # Column 11: status
         }
         
-        for expected_key, patterns in expected_patterns.items():
-            found = False
-            # First try exact match (case insensitive)
-            for col in col_list:
-                if str(col).lower().strip() in [p.lower() for p in patterns]:
-                    mapping[expected_key] = col
-                    found = True
-                    break
-            
-            # If not found, try partial match
-            if not found:
-                for col in col_list:
-                    col_lower = str(col).lower().strip()
-                    for pattern in patterns:
-                        if pattern.lower() in col_lower or col_lower in pattern.lower():
-                            mapping[expected_key] = col
-                            found = True
-                            break
-                    if found:
-                        break
-            
-            if not found:
-                print(f"Warning: Could not find column for '{expected_key}'. Available: {col_list}")
+        print(f"Column mapping based on positions:")
+        for key, col in mapping.items():
+            if col is not None:
+                print(f"  {key}: {col}")
+            else:
+                print(f"  {key}: Not found (column position out of range)")
         
         return mapping
     
