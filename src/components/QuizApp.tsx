@@ -432,6 +432,13 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
         </h2>
       </div>
 
+      {/* Debug info */}
+      {showHint && (
+        <div className="mb-4 p-2 bg-yellow-100 border border-yellow-300 rounded text-sm">
+          Debug: showHint={showHint.toString()}, showResult={showResult.toString()}, answer_letter={currentQuestion.answer_letter}
+        </div>
+      )}
+
       {/* Options */}
       <div className="space-y-3 mb-6">
         {currentQuestion.options.map((option: string, index: number) => {
@@ -442,13 +449,18 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
           
+          // Debug logging for each option
+          if (showHint) {
+            console.log(`Option ${optionLetter}: isCorrect=${isCorrect}, answer_letter=${currentQuestion.answer_letter}`);
+          }
+          
           if (showResult || questionAlreadyAnswered || showHint) {
             // Show result state - readonly with color coding
             if (isCorrect) {
-              // ALWAYS highlight the correct answer in green
+              // ALWAYS highlight the correct answer in green (highest priority)
               buttonClass += "border-green-500 bg-green-50 text-green-800";
-            } else if (isSelected && !showHint) {
-              // Show user's selected answer (if wrong, will be red) - only when not in hint mode
+            } else if (isSelected && !isCorrect) {
+              // Show user's selected answer (if wrong, will be red)
               buttonClass += "border-red-500 bg-red-50 text-red-800";
             } else {
               // Other unselected options remain neutral
@@ -479,7 +491,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
                 {(showResult || questionAlreadyAnswered || showHint) && isCorrect && (
                   <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 )}
-                {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && !showHint && (
+                {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && (
                   <XCircle className="w-5 h-5 text-red-600 mt-1" />
                 )}
               </div>
