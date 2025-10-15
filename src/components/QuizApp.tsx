@@ -103,6 +103,13 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     }
   }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus, showHint]);
 
+  // Auto-show results when hint mode is enabled
+  useEffect(() => {
+    if (showHint) {
+      setShowResult(true);
+    }
+  }, [showHint]);
+
   const shuffleQuestions = () => {
     const shuffled = [...quizData].sort(() => Math.random() - 0.5);
     setQuestions(shuffled);
@@ -119,7 +126,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
 
   const handleAnswerSelect = (_option: string, index: number) => {
     const questionAlreadyAnswered = questionStatus[currentQuestionIndex]?.answered;
-    if (!showResult && !questionAlreadyAnswered) {
+    if (!showResult && !questionAlreadyAnswered && !showHint) {
       setSelectedAnswer(String.fromCharCode(65 + index)); // Convert to A, B, C, D
     }
   };
