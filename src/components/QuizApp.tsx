@@ -435,7 +435,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       {/* Debug info */}
       {showHint && (
         <div className="mb-4 p-2 bg-yellow-100 border border-yellow-300 rounded text-sm">
-          Debug: showHint={showHint.toString()}, showResult={showResult.toString()}, answer_letter={currentQuestion.answer_letter}
+          Debug: showHint={showHint.toString()}, showResult={showResult.toString()}, answer_letter="{currentQuestion.answer_letter}", currentQuestion keys: {Object.keys(currentQuestion).join(', ')}
         </div>
       )}
 
@@ -451,7 +451,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           
           // Debug logging for each option
           if (showHint) {
-            console.log(`Option ${optionLetter}: isCorrect=${isCorrect}, answer_letter=${currentQuestion.answer_letter}`);
+            console.log(`Option ${optionLetter}: isCorrect=${isCorrect}, answer_letter="${currentQuestion.answer_letter}", comparison: "${optionLetter}" === "${currentQuestion.answer_letter}"`);
           }
           
           if (showResult || questionAlreadyAnswered || showHint) {
