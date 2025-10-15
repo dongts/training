@@ -171,6 +171,10 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     if (questionAlreadyAnswered) {
       setSelectedAnswer(questionStatus[index]?.selectedAnswer || '');
       setShowResult(true);
+    } else if (showHint) {
+      // In hint mode, show results for all questions
+      setSelectedAnswer('');
+      setShowResult(true);
     } else {
       setSelectedAnswer('');
       setShowResult(false);
@@ -195,6 +199,10 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       if (questionAlreadyAnswered) {
         setSelectedAnswer(questionStatus[newIndex]?.selectedAnswer || '');
         setShowResult(true);
+      } else if (showHint) {
+        // In hint mode, show results for all questions
+        setSelectedAnswer('');
+        setShowResult(true);
       } else {
         setSelectedAnswer('');
         setShowResult(false);
@@ -212,9 +220,13 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       if (questionAlreadyAnswered) {
         setSelectedAnswer(questionStatus[newIndex]?.selectedAnswer || '');
         setShowResult(true);
+      } else if (showHint) {
+        // In hint mode, show results for all questions
+        setSelectedAnswer('');
+        setShowResult(true);
       } else {
-      setSelectedAnswer('');
-      setShowResult(false);
+        setSelectedAnswer('');
+        setShowResult(false);
       }
     } else {
       setQuizCompleted(true);
@@ -423,22 +435,19 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
           
-          if (showResult || questionAlreadyAnswered) {
+          if (showResult || questionAlreadyAnswered || showHint) {
             // Show result state - readonly with color coding
             if (isCorrect) {
               // ALWAYS highlight the correct answer in green
               buttonClass += "border-green-500 bg-green-50 text-green-800";
-            } else if (isSelected) {
-              // Show user's selected answer (if wrong, will be red)
+            } else if (isSelected && !showHint) {
+              // Show user's selected answer (if wrong, will be red) - only when not in hint mode
               buttonClass += "border-red-500 bg-red-50 text-red-800";
             } else {
               // Other unselected options remain neutral
               buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
             }
             buttonClass += " cursor-default"; // Make it clear it's not clickable
-          } else if (showHint && isCorrect) {
-            // Show hint state - highlight correct answer when hint is enabled
-            buttonClass += "border-green-500 bg-green-50 text-green-800 cursor-pointer";
           } else {
             // Interactive state - can be clicked
             if (isSelected) {
@@ -452,7 +461,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
             <button
               key={index}
               onClick={() => handleAnswerSelect(option, index)}
-              disabled={showResult || questionAlreadyAnswered}
+              disabled={showResult || questionAlreadyAnswered || showHint}
               className={buttonClass}
             >
               <div className="flex items-start gap-3">
@@ -460,14 +469,11 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
                   {optionLetter}.
                 </span>
                 <span className="flex-1">{option}</span>
-                {(showResult || questionAlreadyAnswered) && isCorrect && (
+                {(showResult || questionAlreadyAnswered || showHint) && isCorrect && (
                   <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 )}
-                {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && (
+                {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && !showHint && (
                   <XCircle className="w-5 h-5 text-red-600 mt-1" />
-                )}
-                {showHint && !showResult && !questionAlreadyAnswered && isCorrect && (
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 )}
               </div>
             </button>
@@ -484,7 +490,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
             onChange={(e) => setShowHint(e.target.checked)}
             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
           />
-          <span>Show correct answer hint</span>
+          <span>Show all correct answers (Review Mode)</span>
         </label>
       </div>
 
@@ -499,8 +505,8 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           ← Previous
         </button>
 
-        {/* Submit Answer Button (only show if not submitted yet) */}
-        {!showResult && !questionStatus[currentQuestionIndex]?.answered && (
+        {/* Submit Answer Button (only show if not submitted yet and not in hint mode) */}
+        {!showResult && !questionStatus[currentQuestionIndex]?.answered && !showHint && (
           <button
             onClick={handleSubmitAnswer}
             disabled={!selectedAnswer}
