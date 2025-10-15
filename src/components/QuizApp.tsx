@@ -40,6 +40,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [showQuestionList, setShowQuestionList] = useState(false);
   const [questionStatus, setQuestionStatus] = useState<QuestionStatus[]>([]);
+  const [showHint, setShowHint] = useState(false);
 
   // Local storage functions
   const saveToLocalStorage = () => {
@@ -52,6 +53,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       answeredQuestions,
       quizCompleted,
       questionStatus,
+      showHint,
       timestamp: Date.now()
     };
     localStorage.setItem(storageKey, JSON.stringify(quizState));
@@ -72,6 +74,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           setAnsweredQuestions(state.answeredQuestions || []);
           setQuizCompleted(state.quizCompleted || false);
           setQuestionStatus(state.questionStatus || []);
+          setShowHint(state.showHint || false);
           return true;
         }
       }
@@ -98,7 +101,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     if (questions.length > 0) {
       saveToLocalStorage();
     }
-  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus]);
+  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus, showHint]);
 
   const shuffleQuestions = () => {
     const shuffled = [...quizData].sort(() => Math.random() - 0.5);
@@ -110,6 +113,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     setAnsweredQuestions([]);
     setQuizCompleted(false);
     setQuestionStatus(new Array(shuffled.length).fill(null).map(() => ({ answered: false })));
+    setShowHint(false);
     clearLocalStorage();
   };
 
@@ -432,6 +436,9 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
               buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
             }
             buttonClass += " cursor-default"; // Make it clear it's not clickable
+          } else if (showHint && isCorrect) {
+            // Show hint state - highlight correct answer when hint is enabled
+            buttonClass += "border-green-500 bg-green-50 text-green-800 cursor-pointer";
           } else {
             // Interactive state - can be clicked
             if (isSelected) {
@@ -459,10 +466,26 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
                 {(showResult || questionAlreadyAnswered) && isSelected && !isCorrect && (
                   <XCircle className="w-5 h-5 text-red-600 mt-1" />
                 )}
+                {showHint && !showResult && !questionAlreadyAnswered && isCorrect && (
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
+                )}
               </div>
             </button>
           );
         })}
+      </div>
+
+      {/* Hint Checkbox */}
+      <div className="flex justify-center mb-4">
+        <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={showHint}
+            onChange={(e) => setShowHint(e.target.checked)}
+            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+          />
+          <span>Show correct answer hint</span>
+        </label>
       </div>
 
       {/* Action Buttons */}
