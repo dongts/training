@@ -66,20 +66,28 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
         const state = JSON.parse(saved);
         // Check if saved data is not too old (24 hours)
         if (Date.now() - state.timestamp < 24 * 60 * 60 * 1000) {
-          setQuestions(state.questions || []);
-          setCurrentQuestionIndex(state.currentQuestionIndex || 0);
-          setSelectedAnswer(state.selectedAnswer || '');
-          setShowResult(state.showResult || false);
-          setScore(state.score || 0);
-          setAnsweredQuestions(state.answeredQuestions || []);
-          setQuizCompleted(state.quizCompleted || false);
-          setQuestionStatus(state.questionStatus || []);
-          setShowHint(state.showHint || false);
-          return true;
+          // Check if the questions have the correct structure (with answer_letter)
+          if (state.questions && state.questions.length > 0 && state.questions[0].answer_letter) {
+            setQuestions(state.questions || []);
+            setCurrentQuestionIndex(state.currentQuestionIndex || 0);
+            setSelectedAnswer(state.selectedAnswer || '');
+            setShowResult(state.showResult || false);
+            setScore(state.score || 0);
+            setAnsweredQuestions(state.answeredQuestions || []);
+            setQuizCompleted(state.quizCompleted || false);
+            setQuestionStatus(state.questionStatus || []);
+            setShowHint(state.showHint || false);
+            return true;
+          } else {
+            // Clear invalid cached data
+            console.log('Clearing invalid cached data - missing answer_letter field');
+            clearLocalStorage();
+          }
         }
       }
     } catch (error) {
       console.log('Error loading saved quiz:', error);
+      clearLocalStorage();
     }
     return false;
   };
@@ -432,12 +440,6 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
         </h2>
       </div>
 
-      {/* Debug info */}
-      {showHint && (
-        <div className="mb-4 p-2 bg-yellow-100 border border-yellow-300 rounded text-sm">
-          Debug: showHint={showHint.toString()}, showResult={showResult.toString()}, answer_letter="{currentQuestion.answer_letter}", currentQuestion keys: {Object.keys(currentQuestion).join(', ')}
-        </div>
-      )}
 
       {/* Options */}
       <div className="space-y-3 mb-6">
@@ -449,10 +451,6 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           
           let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ";
           
-          // Debug logging for each option
-          if (showHint) {
-            console.log(`Option ${optionLetter}: isCorrect=${isCorrect}, answer_letter="${currentQuestion.answer_letter}", comparison: "${optionLetter}" === "${currentQuestion.answer_letter}"`);
-          }
           
           if (showResult || questionAlreadyAnswered || showHint) {
             // Show result state - readonly with color coding
