@@ -5,6 +5,7 @@ import Home from './components/Home';
 import QuizApp from './components/QuizApp';
 import testDauThauData from './test_dau_thau.json';
 import deThiNghiepVuKeToanData from './de_thi_nghiep_vu_ke_toan_2025.json';
+import onThiChungChiNghiepVuDauThauData from './on_thi_chung_chi_nghiep_vu_dau_thau_340_cau.json';
 
 interface QuizQuestion {
   source: string;
@@ -35,6 +36,15 @@ const nghiepVuKeToanQuizData: QuizQuestion[] = deThiNghiepVuKeToanData.map((item
   answer_explanation: ""
 }));
 
+// Prepare quiz data for Nghiệp vụ đấu thầu
+const nghiepVuDauThauQuizData: QuizQuestion[] = onThiChungChiNghiepVuDauThauData.map((item: any) => ({
+  source: "Nghiệp vụ đấu thầu",
+  number: item.question_number || item.original_question_number,
+  question: item.question,
+  options: item.options,
+  answer_letter: item.answer_letter,
+  answer_explanation: ""
+}));
 const App = () => {
   return (
     <HashRouter>
@@ -57,6 +67,16 @@ const App = () => {
               quizData={nghiepVuKeToanQuizData}
               title="Quiz Nghiệp vụ kế toán"
               storageKey="nghiepVuKeToanQuizProgress"
+            />
+          } 
+        />
+        <Route 
+          path="/nghiep-vu-dau-thau" 
+          element={
+            <QuizApp 
+              quizData={nghiepVuDauThauQuizData}
+              title="Quiz Nghiệp vụ đấu thầu"
+              storageKey="nghiepVuDauThauQuizProgress"
             />
           } 
         />
