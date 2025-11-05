@@ -20,6 +20,15 @@ const Home: React.FC = () => {
       difficulty: 'Nâng cao',
       color: 'bg-green-500',
       path: '#/nghiep-vu-ke-toan'
+    },
+    {
+      id: 'nghiep-vu-dau-thau',
+      title: 'Nghiệp vụ đấu thầu',
+      description: 'Ôn thi chứng chỉ nghiệp vụ đấu thầu',
+      questionCount: 340,
+      difficulty: 'Trung bình',
+      color: 'bg-red-500',
+      path: '#/nghiep-vu-dau-thau'
     }
     // Add more quiz categories here in the future
   ];
