@@ -1,7 +1,7 @@
 [
   {
     "original_question_number": 1,
-    "question": "Trường hợp nào sau đây bắt buộc phải lựa chọn nhà thầu theo quy định tại Luật đấu thầu?",
+    "question": "Trường hợp nào sau đây bắt buộc phải lựa chọn nhà thầu theo quy định tại Luật Đấu thầu?",
     "options": [
       "Gói thầu thuộc dự án sử dụng vốn ngân sách nhà nước của cơ quan nhà nước",
       "Lựa chọn nhà thầu của doanh nghiệp nhà nước không sử dụng vốn ngân sách nhà nước",
@@ -145,7 +145,7 @@
   },
   {
     "original_question_number": 13,
-    "question": "Ngôn ngữ sử dụng đối với đầu thầu quốc tế là gì?",
+    "question": "Ngôn ngữ sử dụng đối với đấu thầu quốc tế là gì?",
     "options": [
       "Tiếng Việt",
       "Tiếng Đức",
@@ -294,7 +294,7 @@
       "Sở Y tế A được tự quyết định việc mua sắm trên cơ sở bảo đảm công khai, minh bạch, hiệu quả và trách nhiệm giải trình trong trường hợp nhà tài trợ yêu cầu không lựa chọn nhà thầu theo quy định của Luật Đấu thầu",
       "Sở Y tế A phải tổ chức lựa chọn nhà thầu theo quy định của Luật Đấu thầu",
       "Trong mọi trường hợp Sở Y tế A không phải thực hiện theo Luật Đấu thầu do đây là nguồn doanh nghiệp trong nước tài trợ",
-      "Phải xin ý kiến của UBND tỉnh A để có cơ sở xác định có phải tổ chức lựa chọn nhà thầu theo Luật đấu thầu hay không"
+      "Phải xin ý kiến của UBND tỉnh A để có cơ sở xác định có phải tổ chức lựa chọn nhà thầu theo Luật Đấu thầu hay không"
     ],
     "answer_letter": "A",
     "question_number": 25
@@ -313,7 +313,7 @@
   },
   {
     "original_question_number": 27,
-    "question": "Việc giữ lại hồ sơ tài chính của nhà thầu không đạt kỹ thuật sau thời hạn quy định sẽ…?",
+    "question": "Việc giữ lại hồ sơ tài chính của nhà thầu không đạt kỹ thuật sau thời hạn quy định sẽ...?",
     "options": [
       "Là cơ sở để tiếp tục đánh giá trong trường hợp phải đánh giá lại",
       "Bảo đảm trách nhiệm của chủ đầu tư theo quy định của pháp luật về đấu thầu",
@@ -327,10 +327,10 @@
     "original_question_number": 28,
     "question": "Trường hợp nào sau đây Công ty B khi tham dự gói thầu xây lắp X thuộc Dự án Y được kết luận là đáp ứng về bảo đảm cạnh tranh trong đấu thầu?",
     "options": [
-      "Công ty B sử dụng nhà thầu phụ là công ty A, công ty A là nhà thầu tư vấn lập Chương V yêu cầu kỹ thuật cho E -HSMT của gói thầu xây lắp X",
+      "Công ty B sử dụng nhà thầu phụ là công ty A, công ty A là nhà thầu tư vấn lập Chương V yêu cầu kỹ thuật cho E-HSMT của gói thầu xây lắp X",
       "Công ty B tham dự gói thầu xây lắp X đồng thời là nhà thầu tư vấn lập Chương V yêu cầu kỹ thuật của E-HSMT của gói thầu xây lắp X.",
       "Công ty B sử dụng nhà thầu phụ là công ty tư vấn C, công ty tư vấn C sở hữu 30% cổ phần của công ty A và công ty A là nhà thầu tư vấn thiết kế kỹ thuật cho dự án Y",
-      "Công ty A là nhà thầu tư vấn lập hồ sơ mới thầu gói thầu xây lăp X có sở hữu 30% vốn góp của Công ty B"
+      "Công ty A là nhà thầu tư vấn lập hồ sơ mời thầu gói thầu xây lắp X có sở hữu 30% vốn góp của Công ty B"
     ],
     "answer_letter": "C",
     "question_number": 28
@@ -373,7 +373,7 @@
   },
   {
     "original_question_number": 32,
-    "question": "32  Đối với gói thầu mua sắm hàng hóa thông dụng, sẵn có trên thị trường có giá gói thầu 05 tỷ đồng thì kế hoạch lựa chọn nhà thầu phê duyệt áp dụng hình thức lựa chọn nhà thầu nào sau đây?",
+    "question": "Đối với gói thầu mua sắm hàng hóa thông dụng, sẵn có trên thị trường có giá gói thầu 05 tỷ đồng thì kế hoạch lựa chọn nhà thầu phê duyệt áp dụng hình thức lựa chọn nhà thầu nào sau đây?",
     "options": [
       "Chỉ được áp dụng hình thức chào hàng cạnh tranh",
       "Được áp dụng hình thức chào hàng cạnh tranh hoặc đấu thầu rộng rãi",
@@ -484,7 +484,7 @@
     "question": "Kế hoạch lựa chọn nhà thầu của dự án thuộc đối tượng áp dụng của Luật Đấu thầu bắt buộc phải đăng tải ở đâu?",
     "options": [
       "Hệ thống mạng đấu thầu quốc gia",
-      "Báo Tài chính -Đầu tư",
+      "Báo Tài chính-Đầu tư",
       "Cổng Thông tin điện tử của Bộ, ngành",
       "Phương án A và B đều đúng"
     ],
@@ -702,9 +702,9 @@
       "Báo giá của nhà thầu",
       "Quyết định mua sắm được phê duyệt",
       "Kế hoạch lựa chọn nhà thầu được duyệt",
-      "Phương án"
+      "Phương án B và C đều đúng"
     ],
-    "answer_letter": "B",
+    "answer_letter": "C",
     "question_number": 59
   },
   {
@@ -817,7 +817,7 @@
   },
   {
     "original_question_number": 69,
-    "question": "Đối với gói thầu tư vấn tổ chức đấu thầu rộng rãi qua mạng, sử dụng thang điểm 1.000 để xây dựng tiêu chuẩn đánh giá về kỹ thuật, E -HSMT quy định số điểm đối với tiêu chí đánh giá về uy tín của nhà thầu thông qua việc tham dự thầu, kết quả thực hiện hợp đồng của nhà thầu là bao nhiêu?",
+    "question": "Đối với gói thầu tư vấn tổ chức đấu thầu rộng rãi qua mạng, sử dụng thang điểm 1.000 để xây dựng tiêu chuẩn đánh giá về kỹ thuật, E-HSMT quy định số điểm đối với tiêu chí đánh giá về uy tín của nhà thầu thông qua việc tham dự thầu, kết quả thực hiện hợp đồng của nhà thầu là bao nhiêu?",
     "options": [
       "150 điểm",
       "100 điểm",
@@ -829,7 +829,7 @@
   },
   {
     "original_question_number": 70,
-    "question": "Đối với gói thầu thuê hệ thống máy chủ áp dụng đấu thầu rộng rãi qua mạng, thời gian thực hiện gói thầu là 5 năm (có tính chất công việc lặp lại theo chu kỳ qua các năm), giá gói thầu là 5 tỷ đồng, quy mô hợp đồng tương tự tối thiểu được quy định trong E - HSMT là bao nhiêu thì phù hợp quy định?",
+    "question": "Đối với gói thầu thuê hệ thống máy chủ áp dụng đấu thầu rộng rãi qua mạng, thời gian thực hiện gói thầu là 5 năm (có tính chất công việc lặp lại theo chu kỳ qua các năm), giá gói thầu là 5 tỷ đồng, quy mô hợp đồng tương tự tối thiểu được quy định trong E- HSMT là bao nhiêu thì phù hợp quy định?",
     "options": [
       "2,5 tỷ đồng",
       "2 tỷ đồng",
@@ -865,7 +865,7 @@
   },
   {
     "original_question_number": 73,
-    "question": "Gói thầu mua sắm 20 máy điều hòa, tổ chức đấu thầu rộng rãi qua mạng, một giai đoạn một túi hồ sơ, trường hợp E -HSMT có quy định về kinh nghiệm thực hiện hợp đồng tương tự thì tính chất tương tự được quy định như thế nào?",
+    "question": "Gói thầu mua sắm 20 máy điều hòa, tổ chức đấu thầu rộng rãi qua mạng, một giai đoạn một túi hồ sơ, trường hợp E-HSMT có quy định về kinh nghiệm thực hiện hợp đồng tương tự thì tính chất tương tự được quy định như thế nào?",
     "options": [
       "Quy định hàng hóa thuộc cùng lĩnh vực tổng quát với máy điều hòa (thiết bị điện...)",
       "Chỉ quy định hàng hóa có cùng mã Chương, mã Nhóm (tương ứng với 4 số đầu tiên của bộ mã) trong Hệ thống mã HS với mã HS của máy điều hòa",
@@ -901,7 +901,7 @@
   },
   {
     "original_question_number": 76,
-    "question": "Đối với gói thầu xây dựng “Trường trung học phổ thông A”, bao gồm tổ hợp các công trình: + Nhà A1 (Nhà học): Cao 10 tầng, tổng diện tích sàn 8.000 m2, có giá trị theo dự toán được duyệt là (2X) VND. Nhà A1 là công trình kết cấu dạng nhà cấp II theo quy định của Thông tư số 06/2021/TT -BXD. + Nhà A2 (Nhà học): Cao 6 tầng, tổng diện tích sàn 1.000 m2, có giá trị theo dự toán được duyệt là (Y) VND. Nhà A2 là công trình kết cấu dạng nhà cấp III theo quy định của Thông tư số 6/2021/TT -BXD. + Hàng rào bảo vệ: Cao 3m + Nhà bảo vệ: Cao 1 tầng, diện tích sàn 12 m2. Kinh nghiệm thi công công trình tương tự được quy định trong hồ sơ mời thầu như thế nào là phù hợp?",
+    "question": "Đối với gói thầu xây dựng “Trường trung học phổ thông A”, bao gồm tổ hợp các công trình:",
     "options": [
       "Nhà thầu đã hoàn thành công trình xây dựng nhà, kết cấu dạng nhà cấp II, có giá trị tối thiểu là 50% x (2X) VND",
       "Nhà thầu đã hoàn thành công trình xây dựng nhà, kết cấu dạng nhà cấp II, có giá trị tối thiểu là 50% x (2X) VND, trong đó phải bao gồm hạng mục hàng rào bảo vệ, nhà bảo vệ",
@@ -925,7 +925,7 @@
   },
   {
     "original_question_number": 78,
-    "question": "Chủ đầu tư dự kiến mua sắm hàng hóa (không phải mua sắm tập trung hoặc mua sắm hàng hóa có số lượng, khối lượng mời thầu lớn) như sau: - Hàng hóa A có mã HS là 9035, giá trị dự toán là 4.000.000.000 đồng - Hàng hóa B có mã HS là 9035, giá trị dự toán là 6.000.000.000 E-HSMT yêu cầu về kinh nghiệm thực hiện hợp đồng cung cấp hàng hóa tương tự trong trường hợp nào sau đây là phù hợp?",
+    "question": "Chủ đầu tư dự kiến mua sắm hàng hóa (không phải mua sắm tập trung hoặc mua sắm hàng hóa có số lượng, khối lượng mời thầu lớn) như sau:",
     "options": [
       "Cung cấp 01 hợp đồng có mã hàng hóa 9035 với giá trị tối thiểu 02 tỷ đồng",
       "Cung cấp 01 hợp đồng có mã hàng hóa 9035 với giá trị tối thiểu 03 tỷ đồng",
@@ -951,9 +951,9 @@
     "original_question_number": 80,
     "question": "Nội dung nào không phù hợp với quy định về nhà thầu phụ đối với gói thầu mua sắm hàng hóa?",
     "options": [
-      "Chủ đầu tư phải ghi tỷ lệ % giá trị dành cho nhà thầu phụ trong E-BDL làm cơ sở để nhà thầu lập E -HSDT",
-      "Năng lực và kinh nghiệm của nhà thầu phụ sẽ không được xem xét khi đánh giá E -HSDT của nhà thầu",
-      "Nhà thầu được ký kết hợp đồng với các nhà thầu phụ trong danh sách các nhà thầu phụ nêu trong E -HSDT",
+      "Chủ đầu tư phải ghi tỷ lệ % giá trị dành cho nhà thầu phụ trong E-BDL làm cơ sở để nhà thầu lập E-HSDT",
+      "Năng lực và kinh nghiệm của nhà thầu phụ sẽ không được xem xét khi đánh giá E-HSDT của nhà thầu",
+      "Nhà thầu được ký kết hợp đồng với các nhà thầu phụ trong danh sách các nhà thầu phụ nêu trong E-HSDT",
       "Nhà thầu được ký kết hợp đồng với các nhà thầu phụ được chủ đầu tư chấp thuận để tham gia thực hiện cung cấp dịch vụ liên quan"
     ],
     "answer_letter": "A",
@@ -1047,7 +1047,7 @@
     "original_question_number": 88,
     "question": "Đối với gói thầu xây lắp áp dụng đấu thầu rộng rãi qua mạng, trường hợp E-HSMT quy định nhà thầu phải cung cấp đầy đủ các tài liệu: giấy đăng ký thiết bị, hợp đồng, hóa đơn mua hàng, giấy đăng kiểm, kiểm định theo quy định của pháp luật để chứng minh khả năng huy động thiết bị thi công chủ yếu thì nhà thầu phải cung cấp những tài liệu nào?",
     "options": [
-      "Phải cung cấp đầy đủ theo yêu cầu của E -HSMT gồm: giấy đăng ký thiết bị, hợp đồng, hóa đơn mua hàng, giấy đăng kiểm, kiểm định theo quy định của pháp luật",
+      "Phải cung cấp đầy đủ theo yêu cầu của E-HSMT gồm: giấy đăng ký thiết bị, hợp đồng, hóa đơn mua hàng, giấy đăng kiểm, kiểm định theo quy định của pháp luật",
       "Chỉ cần cung cấp một trong các tài liệu: giấy đăng ký thiết bị, hợp đồng, hóa đơn mua hàng, giấy đăng kiểm, kiểm định theo quy định của pháp luật",
       "Phải bắt buộc cung cấp giấy đăng ký thiết bị kèm theo giấy đăng kiểm, kiểm định theo quy định của pháp luật",
       "Phải bắt buộc cung cấp hợp đồng, hóa đơn mua hàng"
@@ -1144,7 +1144,7 @@
     "question": "Trường hợp E-HSMT của gói thầu mua sắm hàng hóa có yêu cầu về cam kết, hợp đồng nguyên tắc bảo hành, bảo trì, duy tu, bảo dưỡng mà E-HSDT của nhà thầu không đính kèm các tài liệu này thì Chủ đầu tư xử lý như thế nào?",
     "options": [
       "Hồ sơ dự thầu của nhà thầu bị loại, không được xem xét, đánh giá",
-      "Chủ đầu tư yêu cầu nhà thầu làm rõ, bổ sung tài liệu trong một khoảng thời gian phù hợp nhưng không ít hơn 03 ngày làm việc để làm cơ sở đánh giá E -HSDT",
+      "Chủ đầu tư yêu cầu nhà thầu làm rõ, bổ sung tài liệu trong một khoảng thời gian phù hợp nhưng không ít hơn 03 ngày làm việc để làm cơ sở đánh giá E-HSDT",
       "Xin ý kiến người có thẩm quyền để xử lý tình huống trong đấu thầu trên cơ sở bảo đảm các mục tiêu của công tác đấu thầu",
       "Tiếp tục đánh giá E-HSDT, trường hơp nhà thầu trúng thầu thì yêu cầu nhà thầu bổ sung, làm rõ tài liệu"
     ],
@@ -1177,10 +1177,10 @@
   },
   {
     "original_question_number": 99,
-    "question": "Đối với đấu thầu qua mạng, trường hợp cần sửa đổi E -HSDT đã nộp trước thời điểm đóng thầu, nhà thầu phải thực hiện theo phương án nào sau đây trong trường hợp E - HSMT của gói thầu này không phải sửa đổi?",
+    "question": "Đối với đấu thầu qua mạng, trường hợp cần sửa đổi E-HSDT đã nộp trước thời điểm đóng thầu, nhà thầu phải thực hiện theo phương án nào sau đây trong trường hợp E- HSMT của gói thầu này không phải sửa đổi?",
     "options": [
-      "Phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó để sửa đổi cho phù hợp và tiến hành nộp lại E -HSDT mới",
-      "Không phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó, chỉ cần sửa đổi cho phù hợp và tiến hành nộp lại E -HSDT mới",
+      "Phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó để sửa đổi cho phù hợp và tiến hành nộp lại E-HSDT mới",
+      "Không phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó, chỉ cần sửa đổi cho phù hợp và tiến hành nộp lại E-HSDT mới",
       "Sửa đổi cho phù hợp E-HSDT đã nộp mà không phải nộp lại E- HSDT mới",
       "Nhà thầu không được sửa đổi E-HSDT đã nộp"
     ],
@@ -1189,10 +1189,10 @@
   },
   {
     "original_question_number": 100,
-    "question": "Đối với đấu thầu qua mạng, nhà thầu đã nộp E -HSDT nhưng sau đó E-HSMT của gói thầu này sửa đổi thì nhà thầu cần thực hiện theo phương án nào sau đây?",
+    "question": "Đối với đấu thầu qua mạng, nhà thầu đã nộp E-HSDT nhưng sau đó E-HSMT của gói thầu này sửa đổi thì nhà thầu cần thực hiện theo phương án nào sau đây?",
     "options": [
-      "Phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó để sửa đổi cho phù hợp và tiến hành nộp lại E -HSDT mới",
-      "Không phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó, chỉ cần sửa đổi cho phù hợp và tiến hành nộp lại E -HSDT mới",
+      "Phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó để sửa đổi cho phù hợp và tiến hành nộp lại E-HSDT mới",
+      "Không phải tiến hành rút toàn bộ E-HSDT đã nộp trước đó, chỉ cần sửa đổi cho phù hợp và tiến hành nộp lại E-HSDT mới",
       "Sửa đổi cho phù hợp E-HSDT đã nộp mà không phải nộp lại E- HSDT mới",
       "Các phương án trên đều sai"
     ],
@@ -1201,7 +1201,7 @@
   },
   {
     "original_question_number": 101,
-    "question": "Đối với đấu thầu qua mạng, trường hợp nhà thầu rút E-HSDT sau thời điểm đóng thầu và trong thời gian có hiệu lực của E -HSDT thì nhà thầu bị xử lý theo phương án nào sau đây?",
+    "question": "Đối với đấu thầu qua mạng, trường hợp nhà thầu rút E-HSDT sau thời điểm đóng thầu và trong thời gian có hiệu lực của E- HSDT thì nhà thầu bị xử lý theo phương án nào sau đây?",
     "options": [
       "Không được hoàn trả bảo đảm dự thầu",
       "Bị đánh giá là không đảm bảo uy tín khi tham dự thầu",
@@ -1218,7 +1218,7 @@
       "Đơn vị sự nghiệp công lập A thuộc Sở Tài chính tỉnh X tham gia gói thầu do Sở Tài chính tỉnh X là chủ đầu tư mà chức năng, nhiệm vụ của đơn vị sự nghiệp công lập A phù hợp với gói thầu",
       "Đơn vị sự nghiệp công lập A tham gia gói thầu do Chi cục B là chủ đầu tư. Chức năng nhiệm vụ của đơn vị sự nghiệp công lập A phù hợp với tính chất gói thầu. Đơn vị sự nghiệp công lập A và Chi cục B lần lượt là đơn vị sự nghiệp công lập và đơn vị hành chính do Sở Tài Chính tỉnh X trực tiếp quản lý",
       "Đơn vị sự nghiệp công lập A tham gia gói thầu do đơn vị sự nghiệp công lập B là chủ đầu tư và cả hai đơn vị đều là đơn vị sự nghiệp do Sở Tài chính tỉnh X trực tiếp quản lý",
-      "Doanh nghiệp C tham gia gói thầu có sử dụng vốn ngân sách nhà nước do đơn vị sự nghiệp công lập A là chủ đầu tư. Đơn vị sự nghiệp công lập A và Doang nghiệp C đều là đơn vị do Sở X trực tiếp quản lý"
+      "Doanh nghiệp C tham gia gói thầu có sử dụng vốn ngân sách nhà nước do đơn vị sự nghiệp công lập A là chủ đầu tư. Đơn vị sự nghiệp công lập A và Doanh nghiệp C đều là đơn vị do Sở X trực tiếp quản lý"
     ],
     "answer_letter": "B",
     "question_number": 102
@@ -1237,12 +1237,12 @@
   },
   {
     "original_question_number": 104,
-    "question": "Có 4 nhà thầu tham dự thầu gói thầu mua sắm hàng hóa áp dụng phương pháp giá thấp nhất, trong đó: - Nhà thầu A, B, D là doanh nghiệp nhỏ và vừa do phụ nữ làm chủ. - Nhà thầu A, B, C và D có giá dự thầu sau sửa lỗi, hiệu chỉnh sai lệch, trừ đi giá trị giảm giá lần lượt là: 95 tỷ đồng, 100 tỷ đồng, 100 tỷ đồng và 105 tỷ đồng. - Nhà thầu A, B, C và D chứng minh được hàng hóa mình tham dự có tỷ lệ chi phí sản xuất trong nước lần lượt là: 20%, 40%, 45% và 60%. Trong trường hợp tất cả nhà thầu đều đáp ứng về kỹ thuật thì nhà thầu nào được xét duyệt trúng thầu?",
+    "question": "Có 4 nhà thầu tham dự thầu gói thầu mua",
     "options": [
       "Nhà thầu A được xét duyệt trúng thầu",
       "Nhà thầu B được xét duyệt trúng thầu",
       "Nhà thầu C được xét duyệt trúng thầu",
-      "Nhà thầu D được xét trúng thầu"
+      "Nhà thầu D được xét duyệt trúng thầu"
     ],
     "answer_letter": "B",
     "question_number": 104
@@ -1285,11 +1285,11 @@
   },
   {
     "original_question_number": 108,
-    "question": "Khi thương thảo hợp đồng đối với gói thầu tư vấn áp dụng đấu thầu rộng rãi qua mạng, trường hợp nào nhà thầu được phép thay đổi nhân sự đã đề xuất trong E -HSDT?",
+    "question": "Khi thương thảo hợp đồng đối với gói thầu tư vấn áp dụng đấu thầu rộng rãi qua mạng, trường hợp nào nhà thầu được phép thay đổi nhân sự đã đề xuất trong E-HSDT?",
     "options": [
       "Không được thay đổi nhân sự đã đề xuất trong E-HSDT trong mọi trường hợp",
       "Được thay đổi nhân sự đã đề xuất trong E-HSDT 01 lần trong trường hợp nhân sự không đáp ứng yêu cầu hoặc không chứng minh được khả năng huy động",
-      "Được thay đổi nhân sự đã đề xuất trong E -HSDT trong trường hợp do thời gian đánh giá E -HSDT kéo dài hơn so với dự kiến trong kế hoạch lựa chọn nhà thầu hoặc vì lý do bất khả kháng mà các vị trí nhân sự chủ chốt do nhà thầu đã đề xuất không thể tham gia thự c hiện hợp đồng",
+      "Được thay đổi nhân sự đã đề xuất trong E-HSDT trong trường hợp do thời gian đánh giá E-HSDT kéo dài hơn so với dự kiến trong kế hoạch lựa chọn nhà thầu hoặc vì lý do bất khả kháng mà các vị trí nhân sự chủ chốt do nhà thầu đã đề xuất không thể tham gia thực hiện hợp đồng",
       "Phương án B và C đều đúng"
     ],
     "answer_letter": "C",
@@ -1300,8 +1300,8 @@
     "question": "Đối với gói thầu xây lắp, áp dụng đấu thầu rộng rãi qua mạng, trường hợp hợp đồng tương tự mà nhà thầu cung cấp trong E- HSDT không đáp ứng theo yêu cầu của E- HSMT, chủ đầu tư xử lý như thế nào?",
     "options": [
       "Đánh giá nhà thầu không đáp ứng về năng lực, kinh nghiệm. Nhà thầu không được bổ sung, thay thế hợp đồng tương tự khác",
-      "Yêu cầu nhà thầu bổ sung, thay thế hợp đồng tương tự khác (được cập nhật từ hồ sơ năng lực của nhà thầu trên Hệ thống). Trường hợp nhà thầu không có hợp đồng đáp ứng yêu cầu của E - HSMT thì nhà thầu bị loại",
-      "Tiếp tục đánh giá E -HSDT của nhà thầu, trường hợp nhà thầu xếp thứ nhất, cho phép nhà thầu bổ sung, thay thế hợp đồng tương tự khác.",
+      "Yêu cầu nhà thầu bổ sung, thay thế hợp đồng tương tự khác (được cập nhật từ hồ sơ năng lực của nhà thầu trên Hệ thống). Trường hợp nhà thầu không có hợp đồng đáp ứng yêu cầu của E- HSMT thì nhà thầu bị loại",
+      "Tiếp tục đánh giá E-HSDT của nhà thầu, trường hợp nhà thầu xếp thứ nhất, cho phép nhà thầu bổ sung, thay thế hợp đồng tương tự khác.",
       "Đồng thời với việc yêu cầu nhà thầu bổ sung hợp đồng thay thế khác thì chủ đầu tư xem xét, điều chỉnh lại yêu cầu về hợp đồng tương tự trong hồ sơ mời thầu"
     ],
     "answer_letter": "B",
@@ -1321,10 +1321,10 @@
   },
   {
     "original_question_number": 111,
-    "question": "Gói thầu xây lắp tổ chức đấu thầu qua mạng có thời điểm đóng thầu là ngày 20/3/2025, năm tài chính của nhà thầu là 01/01 – 31/12, nhà thầu là công ty cổ phần được thành lập vào năm 2018 và E-HSMT yêu cầu nhà thầu nộp báo cáo tài chính của 03 năm gần nhất thì nhà thầu phải nộp báo cáo tài chính của các năm nào sau đây?",
+    "question": "Gói thầu xây lắp tổ chức đấu thầu qua mạng có thời điểm đóng thầu là ngày 20/3/2025, năm tài chính của nhà thầu là 01/01 - 31/12, nhà thầu là công ty cổ phần được thành lập vào năm 2018 và E- HSMT yêu cầu nhà thầu nộp báo cáo tài chính của 03 năm gần nhất thì nhà thầu phải nộp báo cáo tài chính của các năm nào sau đây?",
     "options": [
-      "2020, 2021, 2022",
-      "2021, 2022, 2023",
+      "2020,2021, 2022",
+      "2021,2022, 2023",
       "2021, 2022, 2024",
       "2019, 2020, 2021"
     ],
@@ -1333,7 +1333,7 @@
   },
   {
     "original_question_number": 112,
-    "question": "Đối với công trình đang xét là công trình xây dựng có loại kết cấu dạng nhà cấp II với giá trị công trình là 60 tỷ đồng, E -HSMT có yêu cầu về kinh nghiệm thực hiện hợp đồng xây lắp tương tự, trường hợp nào sau đây được đánh giá là một công trình xây lắp tương tự?",
+    "question": "Đối với công trình đang xét là công trình xây dựng có loại kết cấu dạng nhà cấp II với giá trị công trình là 60 tỷ đồng, E- HSMT có yêu cầu về kinh nghiệm thực hiện hợp đồng xây lắp tương tự, trường hợp nào sau đây được đánh giá là một công trình xây lắp tương tự?",
     "options": [
       "Nhà thầu có 2 công trình xây dựng có loại kết cấu dạng nhà cấp III với giá trị đã hoàn thành toàn bộ lần lượt là 30 tỷ đồng, 50 tỷ đồng",
       "Nhà thầu có 2 công trình xây dựng có loại kết cấu dạng nhà cấp III với giá trị đã hoàn thành toàn bộ lần lượt là 30 tỷ đồng, 20 tỷ đồng",
@@ -1362,14 +1362,14 @@
       "Nhà thầu cung cấp 02 hợp đồng, trong đó: 01 hợp đồng đã thực hiện việc cung cấp mã hàng hóa 8415 với giá trị 400 triệu đồng, 01 hợp đồng đã thực hiện việc cung cấp mã hàng hóa 8415 với giá trị 100 triệu đồng và mã hàng hóa 8507 với giá trị 01 tỷ đồng",
       "Nhà thầu cung cấp 01 hợp đồng có đầy đủ các mã hàng hóa 8415 và 8507 và tổng giá trị của mã hàng hóa 8415, 8507 trong hợp đồng đã hoàn thành với giá trị 1,6 tỷ đồng",
       "Nhà thầu cung cấp 02 hợp đồng, trong đó: 01 hợp đồng đã thực hiện việc cung cấp mã hàng hóa 8415 với giá trị 600 triệu đồng và 01 hợp đồng đã thực hiện việc cung cấp mã hàng hóa 8507 với giá trị 01 tỷ đồng",
-      "Phương án A và B đều không đáp ứng về giá trị hợp đông tương tự"
+      "Phương án A và B đều không đáp ứng về giá trị hợp đồng tương tự"
     ],
     "answer_letter": "A",
     "question_number": 114
   },
   {
     "original_question_number": 115,
-    "question": "Gói thầu cung cấp dịch vụ giặt là thực hiện đấu thầu qua mạng, E -HSMT có quy định cho phép sử dụng nhà thầu phụ tối đa 20% trên giá dự thầu của nhà thầu. Nhà thầu liên danh A-B, trong đó nhà thầu Công ty A đảm nhận 30% giá trị công việc, Công ty B đảm nhận 70% giá trị công việc. Việc sử dụng nhà thầu phụ đối với từng thành viên liên danh được thực hiện như thế nào?",
+    "question": "Gói thầu cung cấp dịch vụ giặt là thực hiện đấu thầu qua mạng, E- HSMT có quy định cho phép sử dụng nhà thầu phụ tối đa 20% trên giá dự thầu của nhà thầu. Nhà thầu liên danh A-B, trong đó nhà thầu Công ty A đảm nhận 30% giá trị công việc, Công ty B đảm nhận 70% giá trị công việc. Việc sử dụng nhà thầu phụ đối với từng thành viên liên danh được thực hiện như thế nào?",
     "options": [
       "Công ty A được sử dụng nhà thầu phụ tối đa 20% trên 30% giá trị công việc mà công ty A đảm nhận, Công ty B được sử dụng nhà thầu phụ tối đa 20% trên 70% giá trị công việc mà công ty B đảm nhận",
       "Công ty A được sử dụng nhà thầu phụ tối đa 20% trên tổng giá trị (100%) công việc và Công ty B được sử dụng nhà thầu phụ tối đa 20% trên tổng giá trị (100%) công việc mà Công ty A và Công ty B đảm nhận",
@@ -1381,9 +1381,9 @@
   },
   {
     "original_question_number": 116,
-    "question": "Nhà thầu liên danh A -B tham dự thầu và nộp bảo đảm dự thầu riêng rẽ, trong quá trình đánh giá hồ sơ dự thầu tổ chuyên gia có bằng chứng cho thấy nhà thầu A có hành vi gian lận, thuộc hành vi bị cấm trong đấu thầu, trong trường hợp này bảo đảm dự thầu của nhà thầu liên danh xử lý như thế nào?",
+    "question": "Nhà thầu liên danh A-B tham dự thầu và nộp bảo đảm dự thầu riêng rẽ, trong quá trình đánh giá hồ sơ dự thầu tổ chuyên gia có bằng chứng cho thấy nhà thầu A có hành vi gian lận, thuộc hành vi bị cấm trong đấu thầu, trong trường hợp này bảo đảm dự thầu của nhà thầu liên danh xử lý như thế nào?",
     "options": [
-      "Không hoàn trả bảo đảm dự thầu của cả nhà thầu liên danh A -B",
+      "Không hoàn trả bảo đảm dự thầu của cả nhà thầu liên danh A-B",
       "Không hoàn trả bảo đảm dự thầu của nhà thầu A",
       "Không hoàn trả bảo đảm dự thầu của nhà thầu B",
       "Nhà thầu A và nhà thầu B vẫn được hoàn trả bảo đảm dự thầu"
@@ -1573,7 +1573,7 @@
   },
   {
     "original_question_number": 132,
-    "question": "Thời gian phê duyệt kết quả lựa chọn nhà thầu được quy định như thế nào?",
+    "question": "Thời gian phê duyệt kết quả lựa chọn nhà thầu được quy định",
     "options": [
       "Do chủ đầu tư quyết định trên cơ sở bảo đảm tiến độ của dự án, gói thầu",
       "Tối đa là 05 ngày làm việc kể từ ngày tổ chuyên gia trình báo cáo đánh giá hồ sơ dự thầu trong trường hợp không thẩm định kết quả lựa chọn nhà thầu",
@@ -1945,12 +1945,12 @@
   },
   {
     "original_question_number": 163,
-    "question": "Thành viên A trong nhà thầu liên danh A -B thực hiện hành vi \"làm giả hoặc làm sai lệch thông tin, hồ sơ, tài liệu trong đấu thầu\" thì việc cấm tham gia hoạt động đấu thầu được xử lý như thế nào?",
+    "question": "Thành viên A trong nhà thầu liên danh A-B thực hiện hành vi \"làm giả hoặc làm sai lệch thông tin, hồ sơ, tài liệu trong đấu thầu\" thì việc cấm tham gia hoạt động đấu thầu được xử lý như thế nào?",
     "options": [
       "Cấm tham gia hoạt động đấu thầu từ 03 năm đến 05 năm đối với thành viên A",
       "Cấm tham gia hoạt động đấu thầu từ 01 năm đến dưới 03 năm đối với thành viên A",
-      "Cấm tham gia hoạt động đấu thầu từ 03 năm đến 05 năm đối với tất cả thành viên trong nhà thầu liên danh A -B",
-      "Cấm tham gia hoạt động đấu thầu từ 01 năm đến 03 năm đối với tất cả thành viên trong nhà thầu liên danh"
+      "Cấm tham gia hoạt động đấu thầu từ 03 năm đến 05 năm đối với tất cả thành viên trong nhà thầu liên danh A-B",
+      "Cấm tham gia hoạt động đấu thầu từ 01 năm đến 03 năm đối với tất cả thành viên trong nhà thầu liên danh A-B"
     ],
     "answer_letter": "A",
     "question_number": 163
@@ -2166,7 +2166,7 @@
       "Có trách nhiệm thành lập",
       "Không có trách nhiệm thành lập",
       "Thành lập khi chủ tịch UBND tỉnh yêu cầu",
-      "Thành lập khi Giám đốc doanh nghiệp"
+      "Thành lập khi Giám đốc doanh nghiệp A đề nghị"
     ],
     "answer_letter": "A",
     "question_number": 181
@@ -2276,7 +2276,7 @@
       "Bị hiệu chỉnh sai lệch, phần sai khác được tính là sai lệch thiếu",
       "Không bị hiệu chỉnh sai lệch, phần sai khác không bị tính là sai lệch thiếu"
     ],
-    "answer_letter": "D",
+    "answer_letter": "C",
     "question_number": 190
   },
   {
@@ -2310,9 +2310,9 @@
       "Tách phần đó ra thành gói thầu riêng biệt để tổ chức lựa chọn nhà thầu theo quy định",
       "Hủy thầu",
       "Đàm phán với nhà thầu trúng thầu của phần khác để thực hiện",
-      "Phương án  B và C đều đúng"
+      "Phương án B và C đều đúng"
     ],
-    "answer_letter": "B",
+    "answer_letter": "A",
     "question_number": 193
   },
   {
@@ -2425,9 +2425,9 @@
   },
   {
     "original_question_number": 203,
-    "question": "Đối với gói thầu tổ chức lựa chọn nhà thầu qua mạng, trường hợp trong quá trình đánh giá E -HSDT mà chưa có kết quả lựa chọn nhà thầu, nhà thầu có tên trong biên bản mở thầu bị khóa tài khoản theo quy định của pháp luật về đấu thầu thì chủ đầu tư xử lý như thế nào?",
+    "question": "Đối với gói thầu tổ chức lựa chọn nhà thầu qua mạng, trường hợp trong quá trình đánh giá E- HSDT mà chưa có kết quả lựa chọn nhà thầu, nhà thầu có tên trong biên bản mở thầu bị khóa tài khoản theo quy định của pháp luật về đấu thầu thì chủ đầu tư xử lý như thế nào?",
     "options": [
-      "Yêu cầu nhà thầu thực hiện các thủ tục để mở khóa tài khoản làm cơ sở xem xét, đánh giá E -HSDT của nhà thầu",
+      "Yêu cầu nhà thầu thực hiện các thủ tục để mở khóa tài khoản làm cơ sở xem xét, đánh giá E-HSDT của nhà thầu",
       "Tiếp tục xem xét, đánh giá E-HSDT của nhà thầu",
       "Không tiếp tục xem xét, đánh giá E-HSDT của nhà thầu",
       "Tiếp tục xem xét, đánh giá E-HSDT của nhà thầu và yêu cầu nhà thầu thực hiện các thủ tục để mở khóa tài khoản trước khi phê duyệt kết quả lựa chọn nhà thầu"
@@ -2521,7 +2521,7 @@
   },
   {
     "original_question_number": 211,
-    "question": "Trong quá trình thực hiện hợp đồng của nhà thầu liên danh A -B, nhà thầu B không còn năng lực để tiếp tục thực hiện hợp đồng, làm ảnh hưởng nghiêm trọng đến tiến độ, chất lượng, hiệu quả của gói thầu. Trong trường hợp này, bảo đảm thực hiện hợp đồng của nhà thầu xử lý như thế nào?",
+    "question": "Trong quá trình thực hiện hợp đồng của nhà thầu liên danh A-B, nhà thầu B không còn năng lực để tiếp tục thực hiện hợp đồng, làm ảnh hưởng nghiêm trọng đến tiến độ, chất lượng, hiệu quả của gói thầu. Trong trường hợp này, bảo đảm thực hiện hợp đồng của nhà thầu xử lý như thế nào?",
     "options": [
       "Không tịch thu giá trị bảo đảm thực hiện hợp đồng của nhà thầu A-B",
       "Tịch thu giá trị bảo đảm thực hiện hợp đồng của tất cả thành viên liên danh trong trường hợp phần công việc còn lại của các thành viên liên danh vi phạm hợp đồng được tách thành gói thầu riêng để lựa chọn nhà thầu",
@@ -2665,7 +2665,7 @@
   },
   {
     "original_question_number": 223,
-    "question": "Đối với đấu thầu qua mạng, việc trả lời yêu cầu làm rõ E -HSMT được thực hiện theo phương án nào?",
+    "question": "Đối với đấu thầu qua mạng, việc trả lời yêu cầu làm rõ E-HSMT được thực hiện theo phương án nào?",
     "options": [
       "Do tổ chuyên gia thực hiện bằng văn bản",
       "Do tổ chuyên gia thực hiện trên Hệ thống mạng đấu thầu quốc gia",
@@ -2677,7 +2677,7 @@
   },
   {
     "original_question_number": 224,
-    "question": "Đối với gói thầu đấu thầu qua mạng, trường hợp sửa đổi E-HSMT sau khi phát hành, chủ đầu tư phải đăng tải tài liệu nào sau đây trên Hệ thống?",
+    "question": "Đối với gói thầu đấu thầu qua mạng, trường hợp sửa đổi E- HSMT sau khi phát hành, chủ đầu tư phải đăng tải tài liệu nào sau đây trên Hệ thống?",
     "options": [
       "Quyết định sửa đổi kèm theo những nội dung sửa đổi E-HSMT",
       "E-HSMT đã được sửa đổi",
@@ -2725,7 +2725,7 @@
   },
   {
     "original_question_number": 228,
-    "question": "Đối với gói thầu tổ chức lựa chọn nhà thầu qua mạng, trong quá trình đánh giá E -HSDT, Chủ đầu tư nhận thấy nhà thầu có tên trong biên bản mở thầu đang bị khóa tài khoản theo quy định của pháp luật về đấu thầu, E-HSDT của nhà thầu bị đánh giá như thế nào?",
+    "question": "Đối với gói thầu tổ chức lựa chọn nhà thầu qua mạng, trong quá trình đánh giá E-HSDT, Chủ đầu tư nhận thấy nhà thầu có tên trong biên bản mở thầu đang bị khóa tài khoản theo quy định của pháp luật về đấu thầu, E-HSDT của nhà thầu bị đánh giá như thế nào?",
     "options": [
       "E-HSDT của nhà thầu được tiếp tục xem xét, đánh giá mà không cần phải mở khóa tài khoản trước khi ký hợp đồng",
       "E-HSDT của nhà thầu được tiếp tục xem xét, đánh giá nhưng chỉ được đề nghị trúng thầu khi thực hiện mở khóa tài khoản trước khi ký hợp đồng",
@@ -2761,7 +2761,7 @@
   },
   {
     "original_question_number": 231,
-    "question": "Đối với đấu thầu qua mạng, khi tham dự thầu, nhà thầu….?",
+    "question": "Đối với đấu thầu qua mạng, khi tham dự thầu, nhà thầu....?",
     "options": [
       "Chịu trách nhiệm về tính chính xác của các thông tin kê khai trên webform và file tài liệu đính kèm",
       "Chỉ nộp một bộ E-HSDT đối với một E-TBMT",
@@ -2773,7 +2773,7 @@
   },
   {
     "original_question_number": 232,
-    "question": "Khi nào nhà thầu phải nộp lại E-HSDT đã nộp?",
+    "question": "Khi nào nhà thầu phải nộp lại E- HSDT đã nộp?",
     "options": [
       "Khi Tổ chuyên gia phát hiện E-HSDT bị lỗi kỹ thuật không mở được",
       "Khi Hệ thống mạng đấu thầu quốc gia gặp sự cố phải tự động gia hạn",
@@ -2792,7 +2792,7 @@
       "Cho phép gia hạn thời điểm đóng thầu tối thiểu 05 ngày làm việc đối với gói thầu xây lắp, hỗn hợp có giá gói thầu không quá 20 tỷ đồng, gói thầu mua sắm hàng hoá, dịch vụ phi tư vấn có giá không quá 10 tỷ đồng",
       "Phương án A và C đều đúng"
     ],
-    "answer_letter": "A",
+    "answer_letter": "D",
     "question_number": 233
   },
   {
@@ -2809,12 +2809,12 @@
   },
   {
     "original_question_number": 235,
-    "question": "Đối với đấu thầu qua mạng, việc làm rõ E- HSDT giữa Chủ đầu tư và nhà thầu có E - HSDT cần phải làm rõ được thực hiện như thế nào?",
+    "question": "Đối với đấu thầu qua mạng, việc làm rõ E- HSDT giữa Chủ đầu tư và nhà thầu có E- HSDT cần phải làm rõ được thực hiện như thế nào?",
     "options": [
       "Chủ đầu tư được làm rõ đối với các nội dung về tư cách hợp lệ, năng lực, kinh nghiệm, không được làm rõ đối với yêu cầu về kỹ thuật, tài chính",
       "Chủ đầu tư được làm rõ đối với yêu cầu về kỹ thuật, tài chính, không được làm rõ đối với các nội dung về tư cách hợp lệ, năng lực, kinh nghiệm",
-      "Chủ đầu tư dành cho nhà thầu tối đa 03 ngày để nhà thầu thực hiện việc làm rõ E -HSDT",
-      "Chủ đầu tư dành cho nhà thầu tối thiểu 03 ngày làm việc để nhà thầu thực hiện việc làm rõ E -HSDT"
+      "Chủ đầu tư dành cho nhà thầu tối đa 03 ngày để nhà thầu thực hiện việc làm rõ E-HSDT",
+      "Chủ đầu tư dành cho nhà thầu tối thiểu 03 ngày làm việc để nhà thầu thực hiện việc làm rõ E-HSDT"
     ],
     "answer_letter": "D",
     "question_number": 235
@@ -2869,12 +2869,12 @@
   },
   {
     "original_question_number": 240,
-    "question": "Quy trình 02 trong đánh giá E-HSDT được áp dụng đối với gói thầu nào sau đây?",
+    "question": "Quy trình 02 trong đánh giá E- HSDT được áp dụng đối với gói thầu nào sau đây?",
     "options": [
-      "Gói thầu mua sắm hàng hóa áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá thấp nhất” và các nhà thầu, E -HSDT đều không có bất kỳ ưu đãi nào",
-      "Gói thầu dịch vụ phi tư vấn áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá đánh giá” và các nhà thầu, E -HSDT chào ưu đãi như nhau",
+      "Gói thầu mua sắm hàng hóa áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá thấp nhất” và các nhà thầu, E-HSDT đều không có bất kỳ ưu đãi nào",
+      "Gói thầu dịch vụ phi tư vấn áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá đánh giá” và các nhà thầu, E-HSDT chào ưu đãi như nhau",
       "Gói thầu xây lắp áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá thấp nhất” và các nhà thầu, E-HSDT đều không có bất kỳ ưu đãi nào",
-      "Gói thầu máy đặt, máy mượn áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá thấp nhất” và các nhà thầu, E -HSDT chào ưu đãi như nhau"
+      "Gói thầu máy đặt, máy mượn áp dụng phương thức một giai đoạn một túi hồ sơ, sử dụng phương pháp “giá thấp nhất” và các nhà thầu, E-HSDT chào ưu đãi như nhau"
     ],
     "answer_letter": "A",
     "question_number": 240
@@ -2886,7 +2886,7 @@
       "Trước khi hết hạn hiệu lực hồ sơ dự thầu trong trường hợp cần gia hạn để tiếp tục đánh giá hồ sơ dự thầu",
       "Trường hợp nhà thầu xếp hạng tiếp theo được mời vào thương thảo hợp đồng nhưng hồ sơ dự thầu của nhà thầu đó hết hiệu lực thì Chủ đầu tư phải yêu cầu nhà thầu gia hạn hiệu lực của hồ sơ dự thầu, bảo đảm dự thầu trước khi thương thảo hợp đồng",
       "Trước khi phê duyệt kết quả lựa chọn nhà thầu",
-      "Phương án  A và B đều đúng"
+      "Phương án A và B đều đúng"
     ],
     "answer_letter": "D",
     "question_number": 241
@@ -2905,7 +2905,7 @@
   },
   {
     "original_question_number": 243,
-    "question": "Theo quy định tại Thông tư số 79/2025/TT - BTC, quy định về thời điểm bắt đầu và kết thúc chào giá trực tuyến theo quy trình rút gọn?",
+    "question": "Theo quy định tại Thông tư số 79/2025/TT- BTC, quy định về thời điểm bắt đầu và kết thúc chào giá trực tuyến theo quy trình rút gọn?",
     "options": [
       "Thời điểm bắt đầu và kết thúc phải trong giờ hành chính.",
       "Thời điểm bắt đầu không bắt buộc trong giờ hành chính nhưng kết thúc phải trong giờ hành chính.",
@@ -2965,19 +2965,19 @@
   },
   {
     "original_question_number": 248,
-    "question": "Dđối với chào giá trực tuyến rút gọn, kể từ lượt chào giá thứ hai, giá chào của nhà thầu không được thấp hơn giá thấp nhất hiển thị trên Hệ thống mạng đấu thầu quốc gia là bao nhiều %?",
+    "question": "Đối với chào giá trực tuyến rút gọn, kể từ",
     "options": [
-      "0.8",
-      "0.85",
-      "0.9",
-      "0.95"
+      "80%",
+      "85%",
+      "90%",
+      "95%"
     ],
     "answer_letter": "C",
     "question_number": 248
   },
   {
     "original_question_number": 249,
-    "question": "Đối với chào giá trực tuyến rút gọn, kể từ lượt chào giá thứ hai, giá chào của nhà thầu không được thấp hơn giá thấp nhất hiển thị trên Hệ thống mạng đấu thầu quốc gia là bao nhiêu %? A.80%  B.85% C.90% D.95% C    249   Đối với chào giá trực tuyến rút gọn, giá trị bảo đảm dự thầu tối đa là giá trị nào sau đây?",
+    "question": "Đối với chào giá trực tuyến rút gọn, giá trị bảo đảm dự thầu tối đa là giá trị nào sau đây?",
     "options": [
       "5% giá gói thầu",
       "10% giá gói thầu",
@@ -3133,11 +3133,11 @@
   },
   {
     "original_question_number": 262,
-    "question": "Khi chủ đầu tư sửa đổi E -HSMT, thay đổi thời điểm đóng thầu (nếu có) trên Hệ thống mạng đấu thầu quốc gia, nhận định nào sau đây đúng?",
+    "question": "Khi chủ đầu tư sửa đổi E- HSMT, thay đổi thời điểm đóng thầu (nếu có) trên Hệ thống mạng đấu thầu quốc gia, nhận định nào sau đây đúng?",
     "options": [
-      "Nhà thầu chịu trách nhiệm theo dõi thông tin trên Hệ thống mạng đấu thầu quốc gia để cập nhật thông tin về việc sửa đổi E - HSMT, thay đổi thời điểm đóng thầu (nếu có) để làm cơ sở chuẩn bị E-HSDT",
-      "Nhà thầu phải tự chịu trách nhiệm và chịu bất lợi trong quá trình tham dự thầu nếu không theo dõi, cập nhật thông tin sửa đổi E -HSMT, thời điểm đóng thầu trên Hệ thống mạng đấu thầu quốc gia trong quá trình tham dự thầu",
-      "Hệ thống mạng đấu thầu quốc gia tự động gửi email thông báo về việc sửa đổi E -HSMT, thay đổi thời điểm đóng thầu (nếu có) cho các nhà thầu quan tâm đến gói thầu",
+      "Nhà thầu chịu trách nhiệm theo dõi thông tin trên Hệ thống mạng đấu thầu quốc gia để cập nhật thông tin về việc sửa đổi E- HSMT, thay đổi thời điểm đóng thầu (nếu có) để làm cơ sở chuẩn bị E-HSDT",
+      "Nhà thầu phải tự chịu trách nhiệm và chịu bất lợi trong quá trình tham dự thầu nếu không theo dõi, cập nhật thông tin sửa đổi E- HSMT, thời điểm đóng thầu trên Hệ thống mạng đấu thầu quốc gia trong quá trình tham dự thầu",
+      "Hệ thống mạng đấu thầu quốc gia tự động gửi email thông báo về việc sửa đổi E-HSMT, thay đổi thời điểm đóng thầu (nếu có) cho các nhà thầu quan tâm đến gói thầu",
       "Các phương án trên đều đúng"
     ],
     "answer_letter": "A",
@@ -3145,11 +3145,11 @@
   },
   {
     "original_question_number": 263,
-    "question": "Trường hợp E-HSMT không đầy đủ thông tin (thiếu thiết kế, bản vẽ và các tài liệu khác) hoặc thông tin không rõ ràng, gây khó khăn cho nhà thầu trong việc chuẩn bị E - HSDT thì chủ đầu tư phải làm gì?",
+    "question": "Trường hợp E-HSMT không đầy đủ thông tin (thiếu thiết kế, bản vẽ và các tài liệu khác) hoặc thông tin không rõ ràng, gây khó khăn cho nhà thầu trong việc chuẩn bị E- HSDT thì chủ đầu tư phải làm gì?",
     "options": [
-      "Phải sửa đổi, bổ sung E -HSMT cho phù hợp và tiến hành đăng tải lại E -HSMT",
+      "Phải sửa đổi, bổ sung E-HSMT cho phù hợp và tiến hành đăng tải lại E-HSMT",
       "Thực hiện bổ sung, hoàn thiện cho phù hợp và sửa đổi trên Hệ thống",
-      "Đính kèm thêm các thành phần còn thiếu của E -HSMT trên Hệ thống",
+      "Đính kèm thêm các thành phần còn thiếu của E-HSMT trên Hệ thống",
       "Hủy thầu"
     ],
     "answer_letter": "A",
@@ -3169,7 +3169,7 @@
   },
   {
     "original_question_number": 265,
-    "question": "Đối với đấu thầu qua mạng, sau khi đánh giá E -HSDT, tổ trưởng tổ chuyên gia phải thực hiện nội dung gì sau đây trên Hệ thống mạng đấu thầu quốc gia?",
+    "question": "Đối với đấu thầu qua mạng, sau khi đánh giá E-HSDT, tổ trưởng tổ chuyên gia phải thực hiện nội dung gì sau đây trên Hệ thống mạng đấu thầu quốc gia?",
     "options": [
       "Đính kèm bản scan báo cáo đánh giá E-HSDT (có chữ ký của tất cả thành viên trong tổ chuyên gia)",
       "Đính kèm bản scan báo cáo đánh giá E-HSDT (không cần có chữ ký của tất cả thành viên trong tổ chuyên gia)",
@@ -3253,7 +3253,7 @@
   },
   {
     "original_question_number": 272,
-    "question": "Đối với đấu thầu qua mạng, thành phần nào sau đây không được coi là một phần của E - HSMST, E -HSMT và nhà thầu không phải đáp ứng các yêu cầu này?",
+    "question": "Đối với đấu thầu qua mạng, thành phần nào sau đây không được coi là một phần của E- HSMST, E-HSMT và nhà thầu không phải đáp ứng các yêu cầu này?",
     "options": [
       "Bảng dữ liệu được số hóa dưới dạng webform trên Hệ thống mạng đấu thầu quốc gia",
       "Tiêu chuẩn đánh giá về tính hợp lệ được đính kèm trên Hệ thống mạng đấu thầu quốc gia",
@@ -3279,8 +3279,8 @@
     "original_question_number": 274,
     "question": "Đối với đấu thầu qua mạng, trường hợp file đính kèm trong E-HSMT không thể mở hoặc không đọc được thì chủ đầu tư phải thực hiện hành động nào sau đây?",
     "options": [
-      "Đăng tải và phát hành lại toàn bộ E -HSMT",
-      "Sửa đổi E -HSMT và không phải phát hành lại toàn bộ E - HSMT",
+      "Đăng tải và phát hành lại toàn bộ E-HSMT",
+      "Sửa đổi E-HSMT và không phải phát hành lại toàn bộ E- HSMT",
       "Đề nghị Trung tâm Đấu thầu qua mạng quốc gia sửa đổi E- HSMT trong trường hợp chủ đầu tư không sửa đổi được E-HSMT",
       "Các phương án trên đều đúng"
     ],
@@ -3289,9 +3289,9 @@
   },
   {
     "original_question_number": 275,
-    "question": "Đối với đấu thầu qua mạng, trường hợp Hệ thống mạng đấu thầu quốc gia gặp sự cố không thể vận hành và phải tự động gia hạn thời điểm đóng thầu của các gói thầu bị ảnh hưởng (có thời điểm đóng thầu trong thời gian từ khi Hệ thống bị sự cố cho đến thời điểm sau hoàn thành khắc phục sự cố 02 giờ) thì việc đánh giá E -HSDT được thực hiện trên cơ sở thời điểm đóng thầu nào sau đây?",
+    "question": "Đối với đấu thầu qua mạng, trường hợp Hệ thống mạng đấu thầu quốc gia gặp sự cố không thể vận hành và phải tự động gia hạn thời điểm đóng thầu của các gói thầu bị ảnh hưởng (có thời điểm đóng thầu trong thời gian từ khi Hệ thống bị sự cố cho đến thời điểm sau hoàn thành khắc phục sự cố 02 giờ) thì việc đánh giá E-HSDT được thực hiện trên cơ sở thời điểm đóng thầu nào sau đây?",
     "options": [
-      "Thời điểm đóng thầu nêu trong E -TBMT đã được đăng tải trước thời điểm Hệ thống mạng đấu thầu quốc gia gặp sự cố",
+      "Thời điểm đóng thầu nêu trong E-TBMT đã được đăng tải trước thời điểm Hệ thống mạng đấu thầu quốc gia gặp sự cố",
       "Thời điểm đóng thầu mà Hệ thống mạng đấu thầu quốc gia tự động gia hạn",
       "Do Chủ đầu tư quyết định",
       "Phương án A và B đều đúng"
@@ -3316,8 +3316,8 @@
     "question": "Đối với đấu thầu qua mạng, trường hợp nhà thầu sử dụng bảo lãnh dự thầu điện tử trên Hệ thống mạng đấu thầu quốc gia, phát biểu nào sau đây là đúng?",
     "options": [
       "Giá trị bảo lãnh dự thầu luôn đáp ứng yêu cầu trong E-HSMT",
-      "Thời gian hiệu lực của bảo lãnh dự thầu luôn đáp ứng yêu cầu trong E -HSMT",
-      "Đối tượng thụ hưởng bảo lãnh dự thầu luôn đáp ứng yêu cầu trong E -HSMT",
+      "Thời gian hiệu lực của bảo lãnh dự thầu luôn đáp ứng yêu cầu trong E-HSMT",
+      "Đối tượng thụ hưởng bảo lãnh dự thầu luôn đáp ứng yêu cầu trong E-HSMT",
       "Các phương án trên đều đúng"
     ],
     "answer_letter": "D",
@@ -3325,12 +3325,12 @@
   },
   {
     "original_question_number": 278,
-    "question": "Gói thầu mua sắm hàng hóa có: - Thời điểm đóng thầu theo E-TBMT là: 8h00 ngày 25/9/2025 - Hiệu lực của bảo đảm dự thầu theo yêu cầu của E -HSMT là: 90 ngày - Do lỗi hệ thống nên Hệ thống tự động gia hạn thời điểm đóng thầu mới là: 11h ngày 26/9/2025 Nhà thầu A đã nộp E-HSDT trước thời điểm Hệ thống xảy ra sự cố với hiệu lực của bảo đảm dự thầu là 90 ngày kể từ ngày 25/9/2025; Nhà thầu B nộp E-HSDT sau khi Hệ thống được khắc phục và trước thời điểm đóng thầu mới với hiệu lực của bảo đảm dự thầu là 90 ngày kể từ ngày 26/9/2025. Trong trường hợp này, bảo đảm dự thầu của nhà thầu A và nhà thầu B được đánh giá như thế nào?",
+    "question": "Gói thầu mua sắm hàng hóa có:",
     "options": [
       "Bảo đảm dự thầu của nhà thầu A được đánh giá là không hợp lệ; Bảo đảm dự thầu của nhà thầu B được đánh giá là hợp lệ",
       "Bảo đảm dự thầu của nhà thầu A và nhà thầu B đều được đánh giá là hợp lệ",
       "Bảo đảm dự thầu của nhà thầu A được đánh giá là hợp lệ; Bảo đảm dự thầu của nhà thầu B được đánh giá là không hợp lệ",
-      "Bảo đảm dự thầu của nhà thầu A và nhà B đều được đánh giá là không hợp lệ"
+      "Bảo đảm dự thầu của nhà thầu A và nhà thầu B đều được đánh giá là không hợp lệ"
     ],
     "answer_letter": "B",
     "question_number": 278
@@ -3481,7 +3481,7 @@
   },
   {
     "original_question_number": 291,
-    "question": "So sánh hai tình huống sửa đổi hợp đồng: (1) Vượt giá gói thầu 10% nhưng không vượt tổng mức đầu tư; (2) Vượt giá gói thầu 2% và làm tổng mức đầu tư tăng 1%, thẩm quyền phê duyệt có gì khác nhau?",
+    "question": "So sánh hai tình huống sửa đổi hợp đồng:",
     "options": [
       "Cả 2 tình huống đều do chủ đầu tư quyết định",
       "Tình huống (1) do chủ đầu tư quyết định, tình huống (2) phải trình người có thẩm quyền xem xét, quyết định",
@@ -3505,7 +3505,7 @@
   },
   {
     "original_question_number": 293,
-    "question": "Gói thầu xây lắp A được phê duyệt KHLCNT với thời gian thực hiện gói thầu là 120 ngày. Trong quá trình thực hiện Hợp đồng, do có phát sinh dẫn tới thời gian thực hiện gói thầu bị kéo dài thành 180 ngày. Trong trường hợp này, chủ đầu tư xử lý như thế nào?",
+    "question": "Gói thầu xây lắp A được phê duyệt KHLCNT với thời gian thực hiện gói thầu là 120 ngày. Trong quá trình thực hiện Hợp đồng, do có phát sinh dẫn tới thời gian thực hiện gói thầu bị kéo dài thành 180 ngày.",
     "options": [
       "Báo cáo người có thẩm quyền trước khi điều chỉnh thời gian thực hiện gói thầu trong kế hoạch lựa chọn nhà thầu đã được phê duyệt",
       "Chủ đầu tư thực hiện điều chỉnh thời gian thực hiện gói thầu trong kế hoạch lựa chọn nhà thầu đã được phê duyệt mà không cần báo cáo người có thẩm quyền",
@@ -3548,7 +3548,7 @@
       "Mua sắm trực tuyến phải được phê duyệt trong kế hoạch lựa chọn nhà thầu và được áp dụng đối với gói thầu mua sắm hàng hóa, gói thầu dịch vụ tư vấn thuộc dự toán có giá gói thầu không quá 01 tỷ đồng",
       "Các phương án trên đều sai"
     ],
-    "answer_letter": "B",
+    "answer_letter": "A",
     "question_number": 296
   },
   {
@@ -3581,7 +3581,7 @@
     "options": [
       "Nhà thầu có thể nộp bổ sung hàng mẫu trong thời hạn 05 ngày làm việc sau thời điểm đóng thầu",
       "Nhà thầu phải nộp hàng mẫu ngay sau khi nộp thành công E- HSDT trên Hệ thống mạng đấu thầu quốc gia",
-      "Nhà thầu nộp hàng mẫu trong thời hạn 05 ngày sau khi nộp thành công E -HSDT trên Hệ thống mạng đấu thầu quốc gia",
+      "Nhà thầu nộp hàng mẫu trong thời hạn 05 ngày sau khi nộp thành công E-HSDT trên Hệ thống mạng đấu thầu quốc gia",
       "Các phương án trên đều sai."
     ],
     "answer_letter": "A",
@@ -3805,7 +3805,7 @@
   },
   {
     "original_question_number": 318,
-    "question": "Đối với đấu thầu qua mạng, sau khi đánh giá E -HSDT, tổ trưởng tổ chuyên gia đính kèm bản scan báo cáo đánh giá E -HSDT lên Hệ thống mạng đấu thầu quốc gia với yêu cầu nào sau đây?",
+    "question": "Đối với đấu thầu qua mạng, sau khi đánh giá E-HSDT, tổ trưởng tổ chuyên gia đính kèm bản scan báo cáo đánh giá E-HSDT lên Hệ thống mạng đấu thầu quốc gia với yêu cầu nào sau đây?",
     "options": [
       "Báo cáo đánh giá E-HSDT có chữ ký của tất cả thành viên trong tổ chuyên gia",
       "Báo cáo đánh giá E-HSDT chỉ cần có chữ ký của tổ trưởng tổ chuyên gia",
@@ -3853,7 +3853,7 @@
   },
   {
     "original_question_number": 322,
-    "question": "Hoạt động nào sau đây không thuộc phạm vi điều chỉnh của Nghị định số 95/2020/NĐ - CP?",
+    "question": "Hoạt động nào sau đây không thuộc phạm vi điều chỉnh của",
     "options": [
       "Mua sắm thiết bị văn phòng",
       "Thuê dịch vụ tư vấn",
@@ -3865,7 +3865,7 @@
   },
   {
     "original_question_number": 323,
-    "question": "Theo các hiệp định mà Việt Nam có mở cửa thị trường mua sắm chính phủ (đấu thầu), nhà thầu nước ngoài được tham gia đấu thầu tại Việt Nam trong trường hợp nào?",
+    "question": "Theo các hiệp định mà Việt Nam có mở cửa thị trường mua sắm chính phủ (đấu thầu), nhà thầu nước ngoài được tham gia đấu thầu tại Việt Nam trong trường hợp nào",
     "options": [
       "Tất cả các gói thầu",
       "Chỉ gói thầu ODA",
@@ -3877,7 +3877,7 @@
   },
   {
     "original_question_number": 324,
-    "question": "Theo quy định tại Nghị định số 95/2020/NĐ - CP, đấu thầu nội khối là?",
+    "question": "Theo quy định tại Nghị định số 95/2020/NĐ- CP, đấu thầu nội khối là?",
     "options": [
       "Đấu thầu mà chỉ có nhà thầu nội khối được tham dự",
       "Đấu thầu cho các dự án trong khối CPTPP",
@@ -3889,7 +3889,7 @@
   },
   {
     "original_question_number": 325,
-    "question": "Theo quy định tại Nghị định số 09/2022/NĐ - CP, cơ quan mua sắm phải tổ chức đấu thầu nội khối, trừ trường hợp nào?",
+    "question": "Theo quy định tại Nghị định số 09/2022/NĐ- CP, cơ quan mua sắm phải tổ chức đấu thầu nội khối, trừ trường hợp nào?",
     "options": [
       "Không có nhà thầu trong nước tham gia",
       "Giá gói thầu quá lớn",
@@ -3901,7 +3901,7 @@
   },
   {
     "original_question_number": 326,
-    "question": "Theo Thông tư số 21/2022/TT -BKHĐT, khi nào được đưa ra yêu cầu về nhân sự chủ chốt trong gói thầu dịch vụ phi tư vấn?",
+    "question": "Theo Thông tư số 21/2022/TT- BKHĐT, khi nào được đưa ra yêu cầu về nhân sự chủ chốt trong gói thầu dịch vụ phi tư vấn?",
     "options": [
       "Trong mọi trường hợp",
       "Khi giá gói thầu lớn",
@@ -3927,10 +3927,10 @@
     "original_question_number": 328,
     "question": "Trường hợp tổ chức lựa chọn nhà thầu đối với gói thầu mua sắm hàng hóa thuộc phạm vi điều chỉnh của Hiệp định UKVFTA tại thời điểm tháng 9/2025, cơ quan mua sắm lập hồ sơ mời thầu theo Mẫu hồ sơ mời thầu ban hành kèm theo Thông tư nào?",
     "options": [
-      "Thông tư số 09/2020/TT -BKHĐT",
-      "Thông tư số 12/2022/TT -BKHĐT",
-      "Thông tư số 15/2022/TT -BKHĐT",
-      "Thông tư số 20/2022/TT -BKHĐT"
+      "Thông tư số 09/2020/TT-BKHĐT",
+      "Thông tư số 12/2022/TT-BKHĐT",
+      "Thông tư số 15/2022/TT-BKHĐT",
+      "Thông tư số 20/2022/TT-BKHĐT"
     ],
     "answer_letter": "B",
     "question_number": 328
@@ -3961,7 +3961,7 @@
   },
   {
     "original_question_number": 331,
-    "question": "Theo quy định tại Nghị định số 95/2020/NĐ - CP (được sửa đổi, bổ sung tại Nghị định số 09/2022/NĐ -CP, Nghị định số 17/2025/NĐ - CP), khái niệm Nước thành viên không bao gồm:",
+    "question": "Theo quy định tại Nghị định số 95/2020/NĐ- CP (được sửa đổi, bổ sung tại Nghị định số 09/2022/NĐ-CP, Nghị định số 17/2025/NĐ- CP), khái niệm Nước thành viên không bao gồm:",
     "options": [
       "Nước thành viên Hiệp định Đối tác Toàn diện và Tiến bộ Xuyên Thái Bình Dương (CPTPP)",
       "Nước thành viên EU",
@@ -3985,7 +3985,7 @@
   },
   {
     "original_question_number": 333,
-    "question": "Theo quy định tại Thông tư số 21/2022/TT -BKHĐT, hồ sơ mời thầu gói thầu dịch vụ phi tư vấn không được đưa ra yêu cầu nào sau đây:",
+    "question": "Theo quy định tại Thông tư số 21/2022/Tt-BKHĐT, hồ sơ mời thầu gói thầu dịch vụ phi tư vấn không được đưa ra yêu cầu nào sau đây:",
     "options": [
       "Yêu cầu về năng lực",
       "Yêu cầu về kinh nghiệm",
@@ -4009,7 +4009,7 @@
   },
   {
     "original_question_number": 335,
-    "question": "Đối với gói thầu thuộc phạm vi điều chỉnh của Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương (CPTPP), Nghị định số 95/2020/NĐ -CP quy định những hình thức lựa chọn nhà thầu nào?",
+    "question": "Đối với gói thầu thuộc phạm vi điều chỉnh của Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương (CPTPP), Nghị định số 95/2020/NĐ-CP quy định những hình thức lựa chọn nhà thầu nào?",
     "options": [
       "Đấu thầu hạn chế và chỉ định thầu",
       "Chỉ có chỉ định thầu",
@@ -4028,7 +4028,7 @@
       "Khuyến khích áp dụng",
       "Tùy quy mô, tính chất từng gói thầu"
     ],
-    "answer_letter": "A",
+    "answer_letter": "C",
     "question_number": 336
   },
   {
@@ -4069,7 +4069,7 @@
   },
   {
     "original_question_number": 340,
-    "question": "Thông tư số 80/2025/TT -BTC quy định chi tiết mẫu hồ sơ yêu cầu, báo cáo đánh giá, báo cáo thẩm định, kiểm tra, báo cáo tình hình thực hiện hoạt động đấu thầu có hiệu lực từ thời điểm nào?",
+    "question": "Thông tư số 80/2025/TT-BTC quy định chi tiết mẫu hồ sơ yêu cầu, báo cáo đánh giá, báo cáo thẩm định, kiểm tra, báo cáo tình hình thực hiện hoạt động đấu thầu có hiệu lực từ thời điểm nào?",
     "options": [
       "Ngày 08/8/2025",
       "Ngày 04/8/2025",
