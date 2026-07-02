@@ -44,6 +44,9 @@ const formatTime = (totalSeconds: number): string => {
 };
 
 const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
+  // Fingerprint of the shipped question bank; saved progress from a different
+  // bank version (e.g. before a dataset update) is discarded on load
+  const bankSignature = `${quizData.length}-${quizData.map((q) => q.answer_letter).join('')}`;
   const [searchParams] = useSearchParams();
   const prefillCount = parsePositiveInt(searchParams.get('count'));
   const prefillTime = parsePositiveInt(searchParams.get('time'));
@@ -80,6 +83,7 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       timeLeft,
       configCount,
       configTime,
+      bankSignature,
       timestamp: Date.now()
     };
     localStorage.setItem(storageKey, JSON.stringify(quizState));
@@ -90,6 +94,12 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       const saved = localStorage.getItem(storageKey);
       if (saved) {
         const state = JSON.parse(saved);
+        // Discard progress saved against a different question bank version
+        if (state.bankSignature !== bankSignature) {
+          console.log('Clearing cached quiz - question bank has been updated');
+          clearLocalStorage();
+          return false;
+        }
         // Check if saved data is not too old (24 hours)
         if (Date.now() - state.timestamp < 24 * 60 * 60 * 1000) {
           // Check if the questions have the correct structure (with answer_letter)
