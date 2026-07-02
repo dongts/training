@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       id: 'nghiep-vu-dau-thau',
       title: 'Nghiệp vụ đấu thầu',
       description: 'Ôn thi chứng chỉ nghiệp vụ đấu thầu',
-      questionCount: 340,
+      questionCount: 390,
       difficulty: 'Trung bình',
       color: 'bg-red-500',
       path: '#/nghiep-vu-dau-thau'
@@ -51,12 +51,12 @@ const Home: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="bg-blue-50 rounded-lg p-6 text-center">
           <BookOpen className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-          <h3 className="text-2xl font-bold text-blue-600">2</h3>
+          <h3 className="text-2xl font-bold text-blue-600">3</h3>
           <p className="text-gray-600">Chủ đề khả dụng</p>
         </div>
         <div className="bg-green-50 rounded-lg p-6 text-center">
           <Users className="w-8 h-8 text-green-600 mx-auto mb-2" />
-          <h3 className="text-2xl font-bold text-green-600">574+</h3>
+          <h3 className="text-2xl font-bold text-green-600">964</h3>
           <p className="text-gray-600">Câu hỏi</p>
         </div>
         <div className="bg-yellow-50 rounded-lg p-6 text-center">

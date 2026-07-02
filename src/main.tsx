@@ -5,7 +5,7 @@ import Home from './components/Home';
 import QuizApp from './components/QuizApp';
 import testDauThauData from './test_dau_thau.json';
 import deThiNghiepVuKeToanData from './de_thi_nghiep_vu_ke_toan_2025.json';
-import onThiChungChiNghiepVuDauThauData from './on_thi_chung_chi_nghiep_vu_dau_thau_340_cau.json';
+import onThiChungChiNghiepVuDauThauData from './on_thi_chung_chi_nghiep_vu_dau_thau_390_cau.json';
 
 interface QuizQuestion {
   source: string;

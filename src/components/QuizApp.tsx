@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Shuffle, RotateCcw, CheckCircle, XCircle, Award, BookOpen, List, X } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { Shuffle, RotateCcw, CheckCircle, XCircle, Award, BookOpen, List, X, Clock, Play } from 'lucide-react';
 
 interface QuizQuestion {
   source: string;
@@ -30,7 +31,29 @@ interface QuizAppProps {
   storageKey: string;
 }
 
+const parsePositiveInt = (value: string | null): number | null => {
+  if (!value) return null;
+  const n = parseInt(value, 10);
+  return Number.isFinite(n) && n > 0 ? n : null;
+};
+
+const formatTime = (totalSeconds: number): string => {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+};
+
 const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
+  const [searchParams] = useSearchParams();
+  const prefillCount = parsePositiveInt(searchParams.get('count'));
+  const prefillTime = parsePositiveInt(searchParams.get('time'));
+
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [configCount, setConfigCount] = useState(
+    Math.min(prefillCount ?? quizData.length, quizData.length)
+  );
+  const [configTime, setConfigTime] = useState(prefillTime ?? 0); // minutes, 0 = no limit
+  const [timeLeft, setTimeLeft] = useState<number | null>(null); // seconds, null = no limit
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -54,6 +77,9 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       quizCompleted,
       questionStatus,
       showHint,
+      timeLeft,
+      configCount,
+      configTime,
       timestamp: Date.now()
     };
     localStorage.setItem(storageKey, JSON.stringify(quizState));
@@ -77,6 +103,10 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
             setQuizCompleted(state.quizCompleted || false);
             setQuestionStatus(state.questionStatus || []);
             setShowHint(state.showHint || false);
+            setTimeLeft(typeof state.timeLeft === 'number' ? state.timeLeft : null);
+            if (state.configCount) setConfigCount(state.configCount);
+            if (typeof state.configTime === 'number') setConfigTime(state.configTime);
+            setQuizStarted(true);
             return true;
           } else {
             // Clear invalid cached data
@@ -96,12 +126,9 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     localStorage.removeItem(storageKey);
   };
 
-  // Initialize quiz on component mount
+  // Resume a saved quiz on mount; otherwise stay on the setup screen
   useEffect(() => {
-    const hasLoadedData = loadFromLocalStorage();
-    if (!hasLoadedData) {
-    shuffleQuestions();
-    }
+    loadFromLocalStorage();
   }, []);
 
   // Save state changes to localStorage
@@ -109,7 +136,18 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     if (questions.length > 0) {
       saveToLocalStorage();
     }
-  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus, showHint]);
+  }, [questions, currentQuestionIndex, selectedAnswer, showResult, score, answeredQuestions, quizCompleted, questionStatus, showHint, timeLeft]);
+
+  // Countdown timer: ticks once per second, finishes the quiz at 0
+  useEffect(() => {
+    if (!quizStarted || quizCompleted || timeLeft === null) return;
+    if (timeLeft <= 0) {
+      setQuizCompleted(true);
+      return;
+    }
+    const id = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+    return () => clearTimeout(id);
+  }, [quizStarted, quizCompleted, timeLeft]);
 
   // Auto-show results when hint mode is enabled
   useEffect(() => {
@@ -118,8 +156,9 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     }
   }, [showHint]);
 
-  const shuffleQuestions = () => {
-    const shuffled = [...quizData].sort(() => Math.random() - 0.5);
+  const startQuiz = (count: number, timeMinutes: number) => {
+    const clampedCount = Math.min(Math.max(count, 1), quizData.length);
+    const shuffled = [...quizData].sort(() => Math.random() - 0.5).slice(0, clampedCount);
     setQuestions(shuffled);
     setCurrentQuestionIndex(0);
     setSelectedAnswer('');
@@ -129,7 +168,13 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     setQuizCompleted(false);
     setQuestionStatus(new Array(shuffled.length).fill(null).map(() => ({ answered: false })));
     setShowHint(false);
+    setTimeLeft(timeMinutes > 0 ? timeMinutes * 60 : null);
+    setQuizStarted(true);
     clearLocalStorage();
+  };
+
+  const shuffleQuestions = () => {
+    startQuiz(configCount, configTime);
   };
 
   const handleAnswerSelect = (_option: string, index: number) => {
@@ -173,8 +218,13 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     setShowResult(true);
   };
 
+  // Back to the setup screen to pick a new configuration
   const resetQuiz = () => {
-    shuffleQuestions();
+    clearLocalStorage();
+    setQuizStarted(false);
+    setQuizCompleted(false);
+    setQuestions([]);
+    setTimeLeft(null);
   };
 
   // Navigate to specific question
@@ -255,6 +305,99 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
     return 'text-red-600';
   };
 
+  if (!quizStarted) {
+    const maxCount = quizData.length;
+    return (
+      <div className="max-w-xl mx-auto p-6 bg-white min-h-screen flex flex-col justify-center">
+        <div className="bg-gray-50 rounded-lg shadow-lg p-8">
+          <div className="text-center mb-8">
+            <BookOpen className="w-10 h-10 text-blue-600 mx-auto mb-3" />
+            <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
+            <p className="text-sm text-gray-500 mt-2">{maxCount} câu hỏi khả dụng</p>
+          </div>
+
+          <div className="space-y-6 mb-8">
+            <div>
+              <label htmlFor="quiz-count" className="block text-sm font-medium text-gray-700 mb-2">
+                Số câu hỏi (1–{maxCount})
+              </label>
+              <input
+                id="quiz-count"
+                type="number"
+                min={1}
+                max={maxCount}
+                value={configCount}
+                onChange={(e) => setConfigCount(parseInt(e.target.value, 10) || 0)}
+                className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none"
+              />
+              <div className="flex gap-2 mt-2">
+                {[10, 20, 50, maxCount].filter((n, i, arr) => n <= maxCount && arr.indexOf(n) === i).map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => setConfigCount(n)}
+                    className={`px-3 py-1 rounded-full text-xs border transition-colors ${
+                      configCount === n
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
+                    }`}
+                  >
+                    {n === maxCount ? `Tất cả (${maxCount})` : n}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="quiz-time" className="block text-sm font-medium text-gray-700 mb-2">
+                Thời gian làm bài (phút, 0 = không giới hạn)
+              </label>
+              <input
+                id="quiz-time"
+                type="number"
+                min={0}
+                value={configTime}
+                onChange={(e) => setConfigTime(parseInt(e.target.value, 10) || 0)}
+                className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none"
+              />
+              <div className="flex gap-2 mt-2">
+                {[0, 15, 30, 60].map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => setConfigTime(n)}
+                    className={`px-3 py-1 rounded-full text-xs border transition-colors ${
+                      configTime === n
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
+                    }`}
+                  >
+                    {n === 0 ? 'Không giới hạn' : `${n} phút`}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => startQuiz(configCount, configTime)}
+              disabled={configCount < 1}
+              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+            >
+              <Play className="w-5 h-5" />
+              Bắt đầu
+            </button>
+            <button
+              onClick={() => window.location.hash = '#/'}
+              className="flex items-center justify-center gap-2 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              Về trang chủ
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (questions.length === 0) {
     return <div className="flex justify-center items-center h-screen">Loading...</div>;
   }
@@ -265,7 +408,9 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
       <div className="max-w-4xl mx-auto p-6 bg-white min-h-screen">
         <div className="text-center mb-8">
           <Award className="mx-auto mb-4 text-6xl text-yellow-500" />
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Quiz Completed!</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            {timeLeft === 0 ? 'Hết giờ!' : 'Quiz Completed!'}
+          </h1>
           <div className={`text-4xl font-bold mb-4 ${getScoreColor()}`}>
             {score}/{questions.length} ({percentage}%)
           </div>
@@ -365,8 +510,18 @@ const QuizApp: React.FC<QuizAppProps> = ({ quizData, title, storageKey }) => {
           ></div>
         </div>
         
-        <div className="flex justify-between text-sm text-gray-600">
+        <div className="flex justify-between items-center text-sm text-gray-600">
           <span>Question {currentQuestionIndex + 1} of {questions.length}</span>
+          {timeLeft !== null && (
+            <span
+              className={`flex items-center gap-1 font-mono text-base font-semibold ${
+                timeLeft < 60 ? 'text-red-600 animate-pulse' : 'text-gray-700'
+              }`}
+            >
+              <Clock className="w-4 h-4" />
+              {formatTime(timeLeft)}
+            </span>
+          )}
           <span>Score: {score}/{currentQuestionIndex + (showResult ? 1 : 0)}</span>
         </div>
       </div>
